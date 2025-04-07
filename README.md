@@ -15,6 +15,9 @@ Amy Chen .-.
 - Kindness !!
 
 ## Development Diary 
-7/4/2025  
+
+
+### 7/4/2025  
 Hana -> I created the basic folder structure and movement for player ready for future sessions. Please feel free to add folders for prototypes, add any music and art created too! 
 
+Angelique -> Imported the .mp3 music files from Discord, just as a test. (It worked!)
