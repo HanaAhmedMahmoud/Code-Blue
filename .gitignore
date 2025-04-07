@@ -1,7 +1,5 @@
-# Godot 4+ specific ignores
 .godot/
 .import/
 .vscode/
 export_presets.cfg
 .mono/
-*.godot
