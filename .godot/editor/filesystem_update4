@@ -1,0 +1,8 @@
+res://Scenes/PlayerScene.tscn
+res://Scripts/Player.gd
+res://Scenes/MainMenu.tscn
+res://Scenes/GameScene.tscn
+res://Scenes/PatientScene.tscn
+res://Scenes/WaveScene.tscn
+res://Scenes/ZombieScene.tscn
+res://Scenes/UI.tscn

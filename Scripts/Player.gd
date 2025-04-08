@@ -9,7 +9,7 @@ func _ready():
 func _process(delta):
 	playerMove(delta)
 
-		
+
 func playerMove(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("right"):
@@ -23,9 +23,9 @@ func playerMove(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
+		#$AnimatedSprite2D.play()
+	#else:
+		#$AnimatedSprite2D.stop()
 
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
