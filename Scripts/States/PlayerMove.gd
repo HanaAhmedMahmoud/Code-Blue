@@ -29,7 +29,6 @@ func physics_update(delta):
 
 	if player.velocity.length() > 0:
 		player.velocity = player.velocity.normalized() * speed
-		#$AnimatedSprite2D.play()
 	else:
 		get_parent().on_child_transition(self, "PlayerIdle")
 

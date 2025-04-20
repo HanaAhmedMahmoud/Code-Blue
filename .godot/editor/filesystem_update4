@@ -12,3 +12,5 @@ res://Scripts/States/PlayerMove.gd
 res://Scripts/States/PlayerIdle.gd
 res://Scripts/StateMachine.gd
 res://README.md
+res://Scripts/MainMenu.gd
+res://Scripts/Globals.gd
