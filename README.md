@@ -8,6 +8,8 @@ Angelique Hulot (@anqilique)
 
 Amy Chen .-.
 
+ciara
+
 ## Coding conventions 
 - Camel casing 
 - Sign off commits with your name 
