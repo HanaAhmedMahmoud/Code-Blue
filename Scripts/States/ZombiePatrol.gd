@@ -24,6 +24,8 @@ func enter():
 	zombie = get_parent().get_parent()
 	
 	set_target(zombie.position.x, zombie.position.y)
+	
+	zombie.modulate = Color("00823f")
 
 func exit():
 	pass
@@ -65,8 +67,7 @@ func physics_update(_delta):
 	zombie.move_and_slide()
 
 func _on_sight_area_2d_body_entered(body: Node2D) -> void:
-	#get_parent().on_child_transition(self, "ZombieChase")
-	pass
+	get_parent().on_child_transition(self, "ZombieChase")
 
 
 func _on_patrol_timer_timeout() -> void:
