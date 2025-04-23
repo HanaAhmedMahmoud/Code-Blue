@@ -6,3 +6,4 @@ res://Scenes/WaveScene.tscn
 res://Scenes/ZombieScene.tscn
 res://Scenes/UI.tscn
 res://Scripts/States/PlayerMove.gd
+res://README.md

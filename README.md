@@ -20,18 +20,24 @@ ciara
 
 
 ### 7/4/2025  
-Hana -> I created the basic folder structure and movement for player ready for future sessions. Please feel free to add folders for prototypes, add any music and art created too! 
+Hana 
+- I created the basic folder structure and movement for player ready for future sessions. Please feel free to add folders for prototypes, add any music and art created too! 
 
-Angelique -> Imported the .mp3 music files from Discord, just as a test. (It worked!)
+Angelique
+- Imported the .mp3 music files from Discord, just as a test. (It worked!)
 
 
 ### 20/04/2025
 
 Angelique
-	-> Created a state machine for the player. Currently we have Move and Idle states.
-	-> Created a skeleton for the main menu. Added transition to game scene on play.
-	-> Put the player into the game scene.
+- Created a state machine for the player. Currently we have Move and Idle states.
+- Created a skeleton for the main menu. Added transition to game scene on play.
+- Put the player into the game scene.
 
-23/04/2025
+### 23/04/2025
+
 ciara
--> added nurse and doctor walking sprites
+- added nurse and doctor walking sprites
+
+Angelique
+- Animated the movement of the player character.
