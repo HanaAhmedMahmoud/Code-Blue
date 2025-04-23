@@ -31,3 +31,7 @@ Angelique
 	-> Created a state machine for the player. Currently we have Move and Idle states.
 	-> Created a skeleton for the main menu. Added transition to game scene on play.
 	-> Put the player into the game scene.
+
+23/04/2025
+ciara
+-> added nurse and doctor walking sprites
