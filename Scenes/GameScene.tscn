@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://hqghxce2lbd5"]
+[gd_scene load_steps=3 format=3 uid="uid://hqghxce2lbd5"]
 
 [ext_resource type="PackedScene" uid="uid://uhy7jnx51fk4" path="res://Scenes/PlayerScene.tscn" id="1_c7wp6"]
+[ext_resource type="PackedScene" uid="uid://bej3jghjd60w2" path="res://Scenes/ZombieScene.tscn" id="2_iy0il"]
 
 [node name="GameScene_tscn" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_c7wp6")]
-position = Vector2(574, 336)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 280.0
@@ -13,3 +11,9 @@ offset_top = 283.0
 offset_right = 420.0
 offset_bottom = 475.0
 color = Color(0, 0.407843, 0.6, 1)
+
+[node name="Zombie" parent="." instance=ExtResource("2_iy0il")]
+position = Vector2(1656, -160)
+
+[node name="Player" parent="." instance=ExtResource("1_c7wp6")]
+position = Vector2(574, 336)

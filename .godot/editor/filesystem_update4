@@ -7,3 +7,6 @@ res://Scenes/ZombieScene.tscn
 res://Scenes/UI.tscn
 res://Scripts/States/PlayerMove.gd
 res://README.md
+res://Scripts/Zombie.gd
+res://Scripts/States/ZombieChase.gd
+res://Scripts/States/ZombiePatrol.gd

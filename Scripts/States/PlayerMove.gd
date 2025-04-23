@@ -1,7 +1,7 @@
 extends State
 class_name PlayerMove
 
-@export var speed = 400
+@export var speed = 800
 
 var player
 var anim_player
@@ -55,5 +55,5 @@ func physics_update(delta):
 		
 		anim_player.play(anim_name)  # Replace with correct idle anim.
 		get_parent().on_child_transition(self, "PlayerIdle")
-
-	player.position += player.velocity * delta
+	
+	player.move_and_slide()
