@@ -1,3 +1,7 @@
+ColorRect
+AnimatedSprite2D
+AnimationPlayer
+Sprite2D
 Camera2D
 Button
 VBoxContainer
@@ -8,8 +12,3 @@ Container
 Control
 PlayerIdle
 PlayerMove
-Node
-Area2D
-CharacterBody2D
-CollisionShape2D
-AnimatedSprite2D

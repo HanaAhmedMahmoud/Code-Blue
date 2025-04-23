@@ -1,7 +1,9 @@
-res://Scenes/UI.tscn
-res://Scenes/MainMenu.tscn
 res://Scenes/PlayerScene.tscn
+res://Scenes/MainMenu.tscn
 res://Scenes/GameScene.tscn
 res://Scenes/PatientScene.tscn
 res://Scenes/WaveScene.tscn
 res://Scenes/ZombieScene.tscn
+res://Scenes/UI.tscn
+res://Scripts/States/PlayerMove.gd
+res://Scripts/States/PlayerIdle.gd
