@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bej3jghjd60w2"]
+[gd_scene load_steps=9 format=3 uid="uid://bej3jghjd60w2"]
 
 [ext_resource type="Texture2D" uid="uid://dkqvah1pes3v6" path="res://icon.svg" id="1_psshm"]
 [ext_resource type="Script" path="res://Scripts/Zombie.gd" id="1_vebhm"]
@@ -12,6 +12,9 @@ height = 186.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gkvs"]
 radius = 905.108
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rrx4k"]
+radius = 1345.15
 
 [node name="Zombie" type="CharacterBody2D"]
 modulate = Color(0, 0.510407, 0.245851, 1)
@@ -34,6 +37,11 @@ shape = SubResource("CapsuleShape2D_t5iyu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea2D"]
 shape = SubResource("CircleShape2D_4gkvs")
 
+[node name="ChaseArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea2D"]
+shape = SubResource("CircleShape2D_rrx4k")
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_vw3xb")
 initial_state = NodePath("ZombiePatrol")
@@ -47,5 +55,5 @@ script = ExtResource("5_m6wvp")
 [node name="PatrolTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="SightArea2D" to="StateMachine/ZombiePatrol" method="_on_sight_area_2d_body_entered"]
-[connection signal="body_exited" from="SightArea2D" to="StateMachine/ZombieChase" method="_on_sight_area_2d_body_exited"]
+[connection signal="body_exited" from="ChaseArea2D" to="StateMachine/ZombieChase" method="_on_chase_area_2d_body_exited"]
 [connection signal="timeout" from="PatrolTimer" to="StateMachine/ZombiePatrol" method="_on_patrol_timer_timeout"]

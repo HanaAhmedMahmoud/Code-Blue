@@ -57,5 +57,5 @@ func physics_update(_delta):
 	zombie.move_and_slide()
 
 
-func _on_sight_area_2d_body_exited(body: Node2D) -> void:
+func _on_chase_area_2d_body_exited(body: Node2D) -> void:
 	get_parent().on_child_transition(self, "ZombiePatrol")

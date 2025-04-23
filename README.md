@@ -42,4 +42,5 @@ ciara
 Angelique
 - Animated the movement of the player character.
 - Created zombie state machine.
-- Create random wandering state for zombie.
+- Created random wandering state for zombie.
+- Created basic zombie chasing behaviour.
