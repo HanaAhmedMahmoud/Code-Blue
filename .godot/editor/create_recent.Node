@@ -1,5 +1,9 @@
+ZombieDeath
+Node2D
+PlayerAttack
 CollisionShape2D
 Area2D
+VBoxContainer
 Node
 Timer
 ZombiePatrol
@@ -9,6 +13,3 @@ Sprite2D
 CharacterBody2D
 AnimationPlayer
 AnimationTree
-AnimatedSprite2D
-ColorRect
-Camera2D

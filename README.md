@@ -49,4 +49,6 @@ Angelique
 ### 24/04/2025
 
 Angelique
-- Import base components for health and hurtbox. To be implemented...
+- Import base components for health and hurtbox.
+- Implemented these for zombies. -> Can take damage, die.
+- Added player projectile attack. -> Left click.

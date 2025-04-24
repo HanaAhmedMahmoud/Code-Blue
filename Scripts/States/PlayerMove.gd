@@ -56,4 +56,7 @@ func physics_update(delta):
 		anim_player.play(anim_name)  # Replace with correct idle anim.
 		get_parent().on_child_transition(self, "PlayerIdle")
 	
+	if Input.is_action_just_pressed("mouse_button_left"):
+		get_parent().on_child_transition(self, "PlayerAttack")
+	
 	player.move_and_slide()

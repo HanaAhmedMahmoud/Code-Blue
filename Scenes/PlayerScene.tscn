@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://uhy7jnx51fk4"]
+[gd_scene load_steps=19 format=3 uid="uid://uhy7jnx51fk4"]
 
 [ext_resource type="Texture2D" uid="uid://dmmoonohrggmu" path="res://Art/Characters/nursesprite.png" id="2_10wre"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="2_uxfj7"]
 [ext_resource type="Script" path="res://Scripts/Components/StateMachine.gd" id="3_1vsl1"]
 [ext_resource type="Script" path="res://Scripts/States/PlayerMove.gd" id="4_cmsmg"]
 [ext_resource type="Script" path="res://Scripts/States/PlayerIdle.gd" id="5_ahgkq"]
+[ext_resource type="Script" path="res://Scripts/States/PlayerAttack.gd" id="6_m155a"]
+[ext_resource type="PackedScene" uid="uid://bdn52mcph24s7" path="res://Scenes/projectile.tscn" id="7_xewsw"]
 
 [sub_resource type="Animation" id="Animation_1prxr"]
 length = 0.001
@@ -191,6 +193,8 @@ shape = SubResource("CapsuleShape2D_5cbdt")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
+[node name="ProjectileSpawn" type="Node2D" parent="."]
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_1vsl1")
 initial_state = NodePath("PlayerIdle")
@@ -200,3 +204,7 @@ script = ExtResource("4_cmsmg")
 
 [node name="PlayerIdle" type="Node" parent="StateMachine"]
 script = ExtResource("5_ahgkq")
+
+[node name="PlayerAttack" type="Node" parent="StateMachine"]
+script = ExtResource("6_m155a")
+projectile = ExtResource("7_xewsw")

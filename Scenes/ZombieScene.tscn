@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bej3jghjd60w2"]
+[gd_scene load_steps=13 format=3 uid="uid://bej3jghjd60w2"]
 
 [ext_resource type="Texture2D" uid="uid://dkqvah1pes3v6" path="res://icon.svg" id="1_psshm"]
 [ext_resource type="Script" path="res://Scripts/Characters/Zombie.gd" id="1_vebhm"]
 [ext_resource type="Script" path="res://Scripts/Components/StateMachine.gd" id="2_vw3xb"]
+[ext_resource type="Script" path="res://Scripts/States/ZombieDeath.gd" id="4_d8bkr"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieChase.gd" id="4_gp210"]
 [ext_resource type="Script" path="res://Scripts/States/ZombiePatrol.gd" id="5_m6wvp"]
 [ext_resource type="PackedScene" uid="uid://0t6hqkb73ll6" path="res://Scenes/health_component.tscn" id="6_jfbba"]
@@ -50,17 +51,20 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea2D"]
 shape = SubResource("CircleShape2D_rrx4k")
 
+[node name="PatrolTimer" type="Timer" parent="."]
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_vw3xb")
 initial_state = NodePath("ZombiePatrol")
+
+[node name="ZombieDeath" type="Node" parent="StateMachine"]
+script = ExtResource("4_d8bkr")
 
 [node name="ZombieChase" type="Node" parent="StateMachine"]
 script = ExtResource("4_gp210")
 
 [node name="ZombiePatrol" type="Node" parent="StateMachine"]
 script = ExtResource("5_m6wvp")
-
-[node name="PatrolTimer" type="Timer" parent="."]
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_jfbba")]
 health = 3

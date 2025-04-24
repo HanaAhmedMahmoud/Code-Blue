@@ -1,11 +1,12 @@
 res://Scenes/MainMenu.tscn
+res://Scripts/Projectile.gd
 res://Scenes/PlayerScene.tscn
 res://Scenes/ZombieScene.tscn
 res://Scenes/GameScene.tscn
 res://Scenes/UI.tscn
-res://Scripts/States/ZombiePatrol.gd
-res://Scripts/Components/HealthComponent.gd
-res://Scenes/health_component.tscn
-res://Scripts/Components/AttackClass.gd
-res://Scripts/Components/HurtboxComponent.gd
+res://Scenes/projectile.tscn
+res://Scripts/States/PlayerAttack.gd
+res://Scripts/Globals.gd
+res://Scripts/States/ZombieTakeDMG.gd
+res://Scripts/States/ZombieDeath.gd
 res://README.md
