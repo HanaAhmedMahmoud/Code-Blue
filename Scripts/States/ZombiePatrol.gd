@@ -2,6 +2,8 @@ extends State
 class_name ZombiePatrol
 
 var zombie
+var timer
+
 var speed = 50
 
 var target_x
@@ -9,8 +11,6 @@ var target_y
 
 
 func set_target(current_x, current_y):
-	var timer = zombie.get_node("PatrolTimer")
-	
 	target_x = current_x + randi_range(-200, 200)
 	target_y = current_y + randi_range(-200, 200)
 	
@@ -22,6 +22,7 @@ func enter():
 	print("Zombie State -> Patrol")
 	
 	zombie = get_parent().get_parent()
+	timer = zombie.get_node("PatrolTimer")
 	
 	set_target(zombie.position.x, zombie.position.y)
 	
@@ -36,11 +37,6 @@ func update(_delta):
 func physics_update(_delta):
 	var current_x = zombie.position.x
 	var current_y = zombie.position.y
-	
-	"""
-	See if there is a better function for this.
-	dist_to??
-	"""
 	
 	var target = Vector2(target_x, target_y)
 	

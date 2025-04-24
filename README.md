@@ -19,7 +19,8 @@ ciara
 ## Development Diary 
 
 
-### 7/4/2025  
+### 7/4/2025
+
 Hana 
 - I created the basic folder structure and movement for player ready for future sessions. Please feel free to add folders for prototypes, add any music and art created too! 
 
@@ -44,3 +45,8 @@ Angelique
 - Created zombie state machine.
 - Created random wandering state for zombie.
 - Created basic zombie chasing behaviour.
+
+### 24/04/2025
+
+Angelique
+- Import base components for health and hurtbox. To be implemented...

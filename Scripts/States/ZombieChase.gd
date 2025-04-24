@@ -1,7 +1,6 @@
 extends State
 class_name ZombieChase
 
-
 var zombie
 var player
 var speed
