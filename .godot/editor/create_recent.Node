@@ -1,3 +1,4 @@
+ZombieTakeDMG
 ZombieDeath
 Node2D
 PlayerAttack
@@ -12,4 +13,3 @@ State
 Sprite2D
 CharacterBody2D
 AnimationPlayer
-AnimationTree
