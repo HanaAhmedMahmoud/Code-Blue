@@ -56,3 +56,8 @@ Angelique
 ### 24/04/2025
 ciara
 - added reception, hotbar
+
+### 24/04/2025
+
+ciara
+- added hospital walls and floors
