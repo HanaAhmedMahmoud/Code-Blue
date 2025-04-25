@@ -53,6 +53,6 @@ Angelique
 - Implemented these for zombies. -> Can take damage, die.
 - Added player projectile attack. -> Left click.
 
-- ### 24/04/2025
+### 24/04/2025
 ciara
 - added reception, hotbar
