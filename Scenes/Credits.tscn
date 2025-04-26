@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2mc0bdwqyee0"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_5yont"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_5yont")
+
+[node name="CreditsContainer" type="CenterContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="CanvasGroup" type="CanvasGroup" parent="CreditsContainer"]
+position = Vector2(-1000, 0)
+
+[node name="Button" type="Button" parent="CreditsContainer/CanvasGroup"]
+offset_left = 1024.0
+offset_top = 21.0
+offset_right = 1122.0
+offset_bottom = 76.0
+text = "BACK"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "Our Team"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Names" type="Label" parent="CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Angelique Hulot
+Ciara 
+Hana Ahmed-Mahmoud
+Amy Chen
+Oliver Huang
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CreditsContainer/CanvasGroup/Button" to="." method="_on_button_pressed"]

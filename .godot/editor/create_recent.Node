@@ -1,3 +1,9 @@
+MarginContainer
+HBoxContainer
+VBoxContainer
+CanvasGroup
+Button
+Label
 CollisionShape2D
 StaticBody2D
 CollisionPolygon2D
@@ -7,8 +13,3 @@ CanvasLayer
 ColorRect
 Node2D
 TileMapLayer
-ZombieTakeDMG
-ZombieDeath
-PlayerAttack
-Area2D
-VBoxContainer

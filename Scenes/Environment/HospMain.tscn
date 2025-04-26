@@ -1,11 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://5ylgidpiopqi"]
+[gd_scene load_steps=18 format=3 uid="uid://5ylgidpiopqi"]
 
 [ext_resource type="Texture2D" uid="uid://bxqnyb3itd0w2" path="res://Art/Environment/hospitalfloors.png" id="1_fxtup"]
 [ext_resource type="Texture2D" uid="uid://jhwbvps4kqst" path="res://Art/Environment/hospitalwalls.png" id="2_5jpuq"]
 [ext_resource type="Texture2D" uid="uid://cog34obac0eyh" path="res://Art/Environment/nursesstation.png" id="3_45wlv"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2cij"]
+size = Vector2(660, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbg7j"]
+size = Vector2(3530, 307)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmx6j"]
+size = Vector2(944, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh7uv"]
+size = Vector2(1794, 316.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3hjs"]
+size = Vector2(64, 1288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47mw1"]
+size = Vector2(88, 573)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_riiue"]
 size = Vector2(728, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mhf4"]
+size = Vector2(1293, 856)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v32hp"]
+size = Vector2(1304, 871)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ngrb"]
+size = Vector2(956, 1341.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijgg3"]
+size = Vector2(952.5, 997.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlv73"]
+size = Vector2(836, 1656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_our6b"]
+size = Vector2(2016, 1082)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf31u"]
+size = Vector2(1268, 1612)
 
 [node name="HospitalEntrance" type="Node2D"]
 
@@ -31,21 +70,75 @@ region_rect = Rect2(4188, 3724, 679, 390)
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="WallsSprite" type="Sprite2D" parent="Walls"]
-position = Vector2(-265, -6)
-texture = ExtResource("2_5jpuq")
+[node name="Curtain" type="StaticBody2D" parent="Walls"]
+collision_layer = 16
+collision_mask = 3
 
-[node name="StationSprite" type="Sprite2D" parent="Walls"]
-position = Vector2(466, 1174)
-texture = ExtResource("3_45wlv")
-
-[node name="CurtainSprite" type="Sprite2D" parent="Walls"]
+[node name="CurtainSprite" type="Sprite2D" parent="Walls/Curtain"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(1860, 1028)
 texture = ExtResource("2_5jpuq")
 region_enabled = true
 region_rect = Rect2(4879, 3667, 660, 177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Curtain"]
+position = Vector2(1873, 1041)
+shape = SubResource("RectangleShape2D_j2cij")
+
+[node name="Station" type="StaticBody2D" parent="Walls"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StationSprite" type="Sprite2D" parent="Walls/Station"]
+position = Vector2(466, 1174)
+texture = ExtResource("3_45wlv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Station"]
+polygon = PackedVector2Array(126, 652, 808, 650, 804, 941, 719, 941, 715, 825, 600, 833, 360, 832, 211, 832, 209, 942, 121, 941, 122, 726)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/Station"]
+polygon = PackedVector2Array(121, 1222, 212, 1221, 212, 1499, 715, 1500, 716, 1219, 806, 1221, 806, 1684, 126, 1683)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls/Station"]
+polygon = PackedVector2Array(307, 1094, 619, 1094, 622, 1191, 598, 1195, 600, 1277, 328, 1277, 327, 1193, 310, 1196)
+
+[node name="WallStaticBody" type="StaticBody2D" parent="Walls"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="WallsSprite" type="Sprite2D" parent="Walls/WallStaticBody"]
+position = Vector2(-265, -6)
+texture = ExtResource("2_5jpuq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallStaticBody"]
+position = Vector2(-221, -238.5)
+shape = SubResource("RectangleShape2D_mbg7j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/WallStaticBody"]
+position = Vector2(-2828, -195)
+shape = SubResource("RectangleShape2D_bmx6j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/WallStaticBody"]
+position = Vector2(-1560, -2502.25)
+shape = SubResource("RectangleShape2D_wh7uv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/WallStaticBody"]
+polygon = PackedVector2Array(-1562, 1940, -583, 1938, -584, 2592, -202, 2596, -204, 1956, -156, 1950, -160, 2596, 223, 2604, 214, 1965, 281, 1965, 279, 2596, 653, 2602, 649, 1960, 708, 1960, 702, 2592, 1082, 2598, 1080, 1956, 1134, 1956, 1130, 2600, 1502, 2600, 1497, 2659, -640, 2666, -647, 2011, -1592, 2009)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls/WallStaticBody"]
+polygon = PackedVector2Array(-3309, -60, -3311, 452, -2875, 452, -2875, 385, -3254, 385, -3248, -71)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/WallStaticBody"]
+position = Vector2(2200, 962)
+shape = SubResource("RectangleShape2D_s3hjs")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls/WallStaticBody"]
+position = Vector2(2698, -1308.5)
+shape = SubResource("RectangleShape2D_47mw1")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/WallStaticBody"]
+polygon = PackedVector2Array(-631, -382, -633, 501, -568, 501, -581, -392, -221, -390, -210, 493, -148, 497, -146, -388, 204, -386, 214, 488, 275, 490, 283, -394, 639, -394, 645, 486, 712, 486, 712, -386, 1080, -390, 1078, 501, 1140, 501, 1134, -401, -639, -400)
 
 [node name="HospEntranceCollider" type="StaticBody2D" parent="."]
 position = Vector2(1559, 1643)
@@ -56,6 +149,69 @@ collision_mask = 3
 visibility_layer = 2
 position = Vector2(304, 478)
 shape = SubResource("RectangleShape2D_riiue")
+
+[node name="BtmOpCollider" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BtmOpCollider"]
+position = Vector2(-2217.5, 1660)
+shape = SubResource("RectangleShape2D_4mhf4")
+
+[node name="TopOpCollider" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopOpCollider"]
+position = Vector2(-2223, 818.5)
+shape = SubResource("RectangleShape2D_v32hp")
+
+[node name="BtmMRICollision" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BtmMRICollision"]
+position = Vector2(-2832, -994.75)
+shape = SubResource("RectangleShape2D_1ngrb")
+
+[node name="TopMRICollision" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopMRICollision"]
+position = Vector2(-2829.25, -2165.75)
+shape = SubResource("RectangleShape2D_ijgg3")
+
+[node name="StorageCollision" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StorageCollision"]
+position = Vector2(-1563, -1150)
+shape = SubResource("RectangleShape2D_vlv73")
+
+[node name="BreakCollision" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BreakCollision"]
+polygon = PackedVector2Array(-749, -2652, -749, -1052, -755, -988, 9, -996, 9, -1335, 717, -1338, 725, -2660, -757, -2673)
+
+[node name="LabCollision" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LabCollision"]
+position = Vector2(1725, -2131)
+shape = SubResource("RectangleShape2D_our6b")
+
+[node name="BreakCollision2" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakCollision2"]
+position = Vector2(2101, -227)
+shape = SubResource("RectangleShape2D_nf31u")
 
 [node name="RoomCover" type="CanvasLayer" parent="."]
 layer = 0

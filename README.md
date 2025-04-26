@@ -62,6 +62,9 @@ ciara
 Angelique
 - Game environment setup. No collision yet.
 
+### 27/04/2025
+
 Hana 
 - Added sound effects and game music 
-- Attempted collisions 
+- Added collisions, called Angelique for help 
+- Added basic credits and control screen 
