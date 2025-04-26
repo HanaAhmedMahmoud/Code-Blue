@@ -20,6 +20,12 @@ color = Color(0.129412, 0.211765, 0.27451, 1)
 position = Vector2(-265, -6)
 texture = ExtResource("1_fxtup")
 
+[node name="CurtainFloor" type="Sprite2D" parent="Floors"]
+position = Vector2(1822, 1063)
+texture = ExtResource("1_fxtup")
+region_enabled = true
+region_rect = Rect2(4188, 3724, 679, 390)
+
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="WallsSprite" type="Sprite2D" parent="Walls"]
@@ -30,67 +36,75 @@ texture = ExtResource("2_5jpuq")
 position = Vector2(466, 1174)
 texture = ExtResource("3_45wlv")
 
+[node name="CurtainSprite" type="Sprite2D" parent="Walls"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1860, 1028)
+texture = ExtResource("2_5jpuq")
+region_enabled = true
+region_rect = Rect2(4879, 3667, 660, 177)
+
 [node name="RoomCover" type="CanvasLayer" parent="."]
 layer = 0
 follow_viewport_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="RoomCover"]
+[node name="HospEntrance" type="ColorRect" parent="RoomCover"]
 offset_left = 1559.0
 offset_top = 1643.0
 offset_right = 2164.0
 offset_bottom = 2605.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="RoomCover"]
+[node name="BtmOperRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -2807.0
 offset_top = 1267.0
 offset_right = -1659.0
 offset_bottom = 2026.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="RoomCover"]
+[node name="TopOperRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -2809.0
 offset_top = 445.0
 offset_right = -1661.0
 offset_bottom = 1204.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="RoomCover"]
+[node name="BtmMRI" type="ColorRect" parent="RoomCover"]
 offset_left = -3245.0
 offset_top = -1622.0
 offset_right = -2439.0
 offset_bottom = -947.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="RoomCover"]
+[node name="TopMRI" type="ColorRect" parent="RoomCover"]
 offset_left = -3247.0
 offset_top = -2601.0
 offset_right = -2441.0
 offset_bottom = -1687.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect6" type="ColorRect" parent="RoomCover"]
+[node name="StorageRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -1920.0
 offset_top = -1913.0
 offset_right = -1212.0
 offset_bottom = -956.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect7" type="ColorRect" parent="RoomCover"]
+[node name="BreakRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -687.0
 offset_top = -2600.0
 offset_right = 667.0
 offset_bottom = -1636.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect8" type="ColorRect" parent="RoomCover"]
+[node name="LabRoom" type="ColorRect" parent="RoomCover"]
 offset_left = 732.0
 offset_top = -2601.0
 offset_right = 2663.0
 offset_bottom = -1904.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
 
-[node name="ColorRect9" type="ColorRect" parent="RoomCover"]
+[node name="OfficeRoom" type="ColorRect" parent="RoomCover"]
 offset_left = 1558.0
 offset_top = -966.0
 offset_right = 2663.0
