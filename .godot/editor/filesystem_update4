@@ -1,9 +1,7 @@
+res://Scenes/Environment/HospMain.tscn
 res://Scenes/MainMenu.tscn
-res://README.md
 res://Scenes/PlayerScene.tscn
 res://Scenes/ZombieScene.tscn
 res://Scenes/GameScene.tscn
 res://Scenes/UI.tscn
-res://Scenes/Environment/HospMain.tscn
-res://Scenes/projectile.tscn
-res://Scenes/WaveScene.tscn
+res://Scenes/Projectile.tscn
