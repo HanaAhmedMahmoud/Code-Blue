@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://2ebmxm3a81wf"]
+
+[ext_resource type="Texture2D" uid="uid://bo8anh613dxjs" path="res://Art/Environment/receptionareafloor.png" id="1_f7lyy"]
+[ext_resource type="Texture2D" uid="uid://7foikommw0xe" path="res://Art/Environment/receptionareawalls.png" id="2_tta2i"]
+[ext_resource type="Texture2D" uid="uid://diex3krklckp7" path="res://Art/Environment/receptionareachairs.png" id="3_ivmwc"]
+[ext_resource type="Texture2D" uid="uid://bxqnyb3itd0w2" path="res://Art/Environment/hospitalfloors.png" id="4_4ycfc"]
+[ext_resource type="Texture2D" uid="uid://jhwbvps4kqst" path="res://Art/Environment/hospitalwalls.png" id="5_dfh70"]
+[ext_resource type="Texture2D" uid="uid://cog34obac0eyh" path="res://Art/Environment/nursesstation.png" id="6_a8eas"]
+
+[node name="Environment" type="Node2D"]
+
+[node name="Reception" type="Node2D" parent="."]
+
+[node name="Floors" type="Node2D" parent="Reception"]
+
+[node name="FloorsSprite" type="Sprite2D" parent="Reception/Floors"]
+position = Vector2(1391, 3404)
+texture = ExtResource("1_f7lyy")
+
+[node name="Walls" type="Node2D" parent="Reception"]
+
+[node name="WallsSprite" type="Sprite2D" parent="Reception/Walls"]
+position = Vector2(1392, 3401)
+texture = ExtResource("2_tta2i")
+
+[node name="Objects" type="Node2D" parent="Reception"]
+
+[node name="ChairsSprite" type="Sprite2D" parent="Reception/Objects"]
+position = Vector2(1390, 3392)
+texture = ExtResource("3_ivmwc")
+
+[node name="Hospital" type="Node2D" parent="."]
+
+[node name="Floors" type="Node2D" parent="Hospital"]
+
+[node name="FloorsSprite" type="Sprite2D" parent="Hospital/Floors"]
+position = Vector2(-265, -6)
+texture = ExtResource("4_4ycfc")
+
+[node name="Walls" type="Node2D" parent="Hospital"]
+
+[node name="WallsSprite" type="Sprite2D" parent="Hospital/Walls"]
+position = Vector2(-265, -6)
+texture = ExtResource("5_dfh70")
+
+[node name="StationSprite" type="Sprite2D" parent="Hospital/Walls"]
+position = Vector2(466, 1174)
+texture = ExtResource("6_a8eas")

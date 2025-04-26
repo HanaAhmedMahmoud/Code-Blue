@@ -1,50 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://hqghxce2lbd5"]
+[gd_scene load_steps=3 format=3 uid="uid://hqghxce2lbd5"]
 
+[ext_resource type="PackedScene" uid="uid://5ylgidpiopqi" path="res://Scenes/Environment/HospMain.tscn" id="1_6xis0"]
 [ext_resource type="PackedScene" uid="uid://uhy7jnx51fk4" path="res://Scenes/PlayerScene.tscn" id="1_c7wp6"]
-[ext_resource type="Texture2D" uid="uid://bxqnyb3itd0w2" path="res://Art/Environment/hospitalfloors.png" id="1_mlelc"]
-[ext_resource type="PackedScene" uid="uid://bej3jghjd60w2" path="res://Scenes/ZombieScene.tscn" id="2_iy0il"]
-[ext_resource type="Texture2D" uid="uid://jhwbvps4kqst" path="res://Art/Environment/hospitalwalls.png" id="4_3b5ea"]
 
 [node name="GameScene_tscn" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 280.0
-offset_top = 283.0
-offset_right = 420.0
-offset_bottom = 475.0
-color = Color(0, 0.407843, 0.6, 1)
-
-[node name="Hospitalfloors" type="Sprite2D" parent="."]
-position = Vector2(858, 879)
-texture = ExtResource("1_mlelc")
+[node name="HospitalEntrance" parent="." instance=ExtResource("1_6xis0")]
 
 [node name="Player" parent="." instance=ExtResource("1_c7wp6")]
-position = Vector2(685, 225)
-
-[node name="Zombie" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(-350, 752)
-
-[node name="Zombie2" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(58, -795)
-
-[node name="Zombie3" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(1923, 566)
-
-[node name="Zombie4" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(819, 1503)
-
-[node name="Zombie5" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(-1187, 1408)
-
-[node name="Zombie6" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(-779, -139)
-
-[node name="Zombie7" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(2285, -170)
-
-[node name="Zombie8" parent="." instance=ExtResource("2_iy0il")]
-position = Vector2(1645, -828)
-
-[node name="Hospitalwalls" type="Sprite2D" parent="."]
-position = Vector2(850, 881)
-texture = ExtResource("4_3b5ea")
+position = Vector2(-262, 329)

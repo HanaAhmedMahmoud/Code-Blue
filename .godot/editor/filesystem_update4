@@ -1,7 +1,2 @@
-res://Scenes/GameScene.tscn
+res://Scenes/Environment/HospMain.tscn
 res://README.md
-res://Scenes/MainMenu.tscn
-res://Scenes/PlayerScene.tscn
-res://Scenes/ZombieScene.tscn
-res://Scenes/UI.tscn
-res://Scenes/projectile.tscn

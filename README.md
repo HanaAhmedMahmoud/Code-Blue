@@ -56,3 +56,8 @@ Angelique
 ciara
 - added reception, hotbar
 - added hospital walls and floors
+
+### 26/04/2025
+
+Angelique
+- Game environment setup. No collision yet.

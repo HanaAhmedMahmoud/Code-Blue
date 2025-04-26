@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://2mfio4kkkflc"]
+
+[ext_resource type="Texture2D" uid="uid://bxqnyb3itd0w2" path="res://Art/Environment/hospitalfloors.png" id="1_kldy5"]
+[ext_resource type="Texture2D" uid="uid://jhwbvps4kqst" path="res://Art/Environment/hospitalwalls.png" id="2_yngrv"]
+
+[node name="HospitalEntrance" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="Floors" type="Node2D" parent="."]
+
+[node name="FloorsSprite" type="Sprite2D" parent="Floors"]
+position = Vector2(-265, -6)
+texture = ExtResource("1_kldy5")
+region_enabled = true
+region_rect = Rect2(4843.37, 4313, 733.634, 1079)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallsSprite" type="Sprite2D" parent="Walls"]
+position = Vector2(-265, -6)
+texture = ExtResource("2_yngrv")
+region_enabled = true
+region_rect = Rect2(4843.37, 4313, 733.634, 1079)

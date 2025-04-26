@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/States/PlayerMove.gd" id="4_cmsmg"]
 [ext_resource type="Script" path="res://Scripts/States/PlayerIdle.gd" id="5_ahgkq"]
 [ext_resource type="Script" path="res://Scripts/States/PlayerAttack.gd" id="6_m155a"]
-[ext_resource type="PackedScene" uid="uid://bdn52mcph24s7" path="res://Scenes/projectile.tscn" id="7_xewsw"]
+[ext_resource type="PackedScene" uid="uid://bdn52mcph24s7" path="res://Scenes/Projectile.tscn" id="7_xewsw"]
 
 [sub_resource type="Animation" id="Animation_1prxr"]
 length = 0.001

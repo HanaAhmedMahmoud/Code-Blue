@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://5ylgidpiopqi"]
+
+[ext_resource type="Texture2D" uid="uid://bxqnyb3itd0w2" path="res://Art/Environment/hospitalfloors.png" id="1_fxtup"]
+[ext_resource type="Texture2D" uid="uid://jhwbvps4kqst" path="res://Art/Environment/hospitalwalls.png" id="2_5jpuq"]
+[ext_resource type="Texture2D" uid="uid://cog34obac0eyh" path="res://Art/Environment/nursesstation.png" id="3_45wlv"]
+
+[node name="HospitalEntrance" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="Floors" type="Node2D" parent="."]
+
+[node name="FloorsSprite" type="Sprite2D" parent="Floors"]
+position = Vector2(-265, -6)
+texture = ExtResource("1_fxtup")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallsSprite" type="Sprite2D" parent="Walls"]
+position = Vector2(-265, -6)
+texture = ExtResource("2_5jpuq")
+
+[node name="StationSprite" type="Sprite2D" parent="Walls"]
+position = Vector2(466, 1174)
+texture = ExtResource("3_45wlv")
+
+[node name="RoomCover" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="RoomCover"]
+offset_left = 1559.0
+offset_top = 1643.0
+offset_right = 2164.0
+offset_bottom = 2605.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="RoomCover"]
+offset_left = -2807.0
+offset_top = 1267.0
+offset_right = -1659.0
+offset_bottom = 2026.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="RoomCover"]
+offset_left = -2809.0
+offset_top = 445.0
+offset_right = -1661.0
+offset_bottom = 1204.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="RoomCover"]
+offset_left = -3245.0
+offset_top = -1622.0
+offset_right = -2439.0
+offset_bottom = -947.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="RoomCover"]
+offset_left = -3247.0
+offset_top = -2601.0
+offset_right = -2441.0
+offset_bottom = -1687.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="RoomCover"]
+offset_left = -1920.0
+offset_top = -1913.0
+offset_right = -1212.0
+offset_bottom = -956.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="RoomCover"]
+offset_left = -687.0
+offset_top = -2600.0
+offset_right = 667.0
+offset_bottom = -1636.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="RoomCover"]
+offset_left = 732.0
+offset_top = -2601.0
+offset_right = 2663.0
+offset_bottom = -1904.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="RoomCover"]
+offset_left = 1558.0
+offset_top = -966.0
+offset_right = 2663.0
+offset_bottom = 267.0
+color = Color(0.129412, 0.211765, 0.27451, 1)
