@@ -61,3 +61,7 @@ ciara
 
 Angelique
 - Game environment setup. No collision yet.
+
+Hana 
+- Added sound effects and game music 
+- Attempted collisions 

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://5ylgidpiopqi"]
+[gd_scene load_steps=5 format=3 uid="uid://5ylgidpiopqi"]
 
 [ext_resource type="Texture2D" uid="uid://bxqnyb3itd0w2" path="res://Art/Environment/hospitalfloors.png" id="1_fxtup"]
 [ext_resource type="Texture2D" uid="uid://jhwbvps4kqst" path="res://Art/Environment/hospitalwalls.png" id="2_5jpuq"]
 [ext_resource type="Texture2D" uid="uid://cog34obac0eyh" path="res://Art/Environment/nursesstation.png" id="3_45wlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riiue"]
+size = Vector2(728, 1080)
 
 [node name="HospitalEntrance" type="Node2D"]
 
@@ -54,6 +57,15 @@ offset_top = 1643.0
 offset_right = 2164.0
 offset_bottom = 2605.0
 color = Color(0.129412, 0.211765, 0.27451, 1)
+
+[node name="HospEntranceCollider" type="StaticBody2D" parent="RoomCover/HospEntrance"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomCover/HospEntrance/HospEntranceCollider"]
+visibility_layer = 2
+position = Vector2(304, 478)
+shape = SubResource("RectangleShape2D_riiue")
 
 [node name="BtmOperRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -2807.0

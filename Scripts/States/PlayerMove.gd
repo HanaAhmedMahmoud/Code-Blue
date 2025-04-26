@@ -48,10 +48,12 @@ func physics_update(delta):
 		
 		if anim_name != "" and current_anim != anim_name:
 			anim_player.play(anim_name)
+			$"../../Walking".play()
 		
 	else:
 		anim_name = "idle_" + player_direction
 		anim_player.play(anim_name)
+		$"../../Walking".stop()
 		
 		anim_player.play(anim_name)  # Replace with correct idle anim.
 		get_parent().on_child_transition(self, "PlayerIdle")

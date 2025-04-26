@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://hqghxce2lbd5"]
+[gd_scene load_steps=6 format=3 uid="uid://hqghxce2lbd5"]
 
 [ext_resource type="PackedScene" uid="uid://5ylgidpiopqi" path="res://Scenes/Environment/HospMain.tscn" id="1_6xis0"]
 [ext_resource type="PackedScene" uid="uid://uhy7jnx51fk4" path="res://Scenes/PlayerScene.tscn" id="1_c7wp6"]
+[ext_resource type="Script" path="res://Scenes/game_scene.gd" id="1_gqdhi"]
+[ext_resource type="AudioStream" uid="uid://d0cr1mbf7ieo3" path="res://Sound/MainTheme_v0.mp3" id="3_pk4y2"]
+[ext_resource type="AudioStream" uid="uid://y8c34d2phrq5" path="res://Sound/Combat_v0.mp3" id="5_gu4yu"]
 
 [node name="GameScene_tscn" type="Node2D"]
+script = ExtResource("1_gqdhi")
 
 [node name="HospitalEntrance" parent="." instance=ExtResource("1_6xis0")]
 
 [node name="Player" parent="." instance=ExtResource("1_c7wp6")]
 position = Vector2(-262, 329)
+
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pk4y2")
+max_distance = 5000.0
+parameters/looping = false
+
+[node name="CombatTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gu4yu")
+parameters/looping = false

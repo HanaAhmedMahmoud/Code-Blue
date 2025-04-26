@@ -15,6 +15,7 @@ func enter():
 	var spawn_node = player.get_node("ProjectileSpawn")
 	
 	new_projectile.position = spawn_node.global_position
+	
 	add_child(new_projectile)
 
 func exit():

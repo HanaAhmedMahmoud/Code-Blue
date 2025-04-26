@@ -1,3 +1,7 @@
+CollisionShape2D
+StaticBody2D
+CollisionPolygon2D
+AudioStreamPlayer2D
 Node
 CanvasLayer
 ColorRect
@@ -6,9 +10,5 @@ TileMapLayer
 ZombieTakeDMG
 ZombieDeath
 PlayerAttack
-CollisionShape2D
 Area2D
 VBoxContainer
-Timer
-ZombiePatrol
-ZombieChase

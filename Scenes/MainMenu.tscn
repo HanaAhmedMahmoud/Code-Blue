@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccirg8bg78hw6"]
+[gd_scene load_steps=3 format=3 uid="uid://ccirg8bg78hw6"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_04f1g"]
+[ext_resource type="AudioStream" uid="uid://d0cr1mbf7ieo3" path="res://Sound/MainTheme_v0.mp3" id="2_5165c"]
 
 [node name="MainMenu_tscn" type="Node2D"]
 script = ExtResource("1_04f1g")
@@ -33,5 +34,8 @@ text = "CONTROLS"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
+
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5165c")
 
 [connection signal="pressed" from="MenuContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://uhy7jnx51fk4"]
+[gd_scene load_steps=20 format=3 uid="uid://uhy7jnx51fk4"]
 
 [ext_resource type="Texture2D" uid="uid://dmmoonohrggmu" path="res://Art/Characters/nursesprite.png" id="2_10wre"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="2_uxfj7"]
@@ -6,7 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/States/PlayerMove.gd" id="4_cmsmg"]
 [ext_resource type="Script" path="res://Scripts/States/PlayerIdle.gd" id="5_ahgkq"]
 [ext_resource type="Script" path="res://Scripts/States/PlayerAttack.gd" id="6_m155a"]
-[ext_resource type="PackedScene" uid="uid://bdn52mcph24s7" path="res://Scenes/Projectile.tscn" id="7_xewsw"]
+[ext_resource type="PackedScene" uid="uid://bdn52mcph24s7" path="res://Scenes/projectile.tscn" id="7_xewsw"]
+[ext_resource type="AudioStream" uid="uid://47ketw1uy1oy" path="res://Sound/walking.mp3" id="8_1rtex"]
 
 [sub_resource type="Animation" id="Animation_1prxr"]
 length = 0.001
@@ -209,3 +210,7 @@ script = ExtResource("5_ahgkq")
 [node name="PlayerAttack" type="Node" parent="StateMachine"]
 script = ExtResource("6_m155a")
 projectile = ExtResource("7_xewsw")
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_1rtex")
+volume_db = 20.0
