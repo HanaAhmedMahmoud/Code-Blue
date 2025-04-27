@@ -1,3 +1,6 @@
+AudioStreamPlayer
+Node
+Node2D
 MarginContainer
 HBoxContainer
 VBoxContainer
@@ -8,8 +11,4 @@ CollisionShape2D
 StaticBody2D
 CollisionPolygon2D
 AudioStreamPlayer2D
-Node
 CanvasLayer
-ColorRect
-Node2D
-TileMapLayer

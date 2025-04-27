@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2mc0bdwqyee0"]
 
-[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_5yont"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_5yont"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_5yont")
@@ -37,6 +37,7 @@ Ciara
 Hana Ahmed-Mahmoud
 Amy Chen
 Oliver Huang
+Ahad
 "
 horizontal_alignment = 1
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvn0lph7tvrno"]
+
+[ext_resource type="AudioStream" uid="uid://y8c34d2phrq5" path="res://Sound/combat_theme.mp3" id="1_5am8t"]
+[ext_resource type="Script" path="res://Scripts/Autoloads/AudioManager.gd" id="1_5y08d"]
+[ext_resource type="AudioStream" uid="uid://d0cr1mbf7ieo3" path="res://Sound/main_theme.mp3" id="2_gawqe"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_5y08d")
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gawqe")
+
+[node name="CombatTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5am8t")

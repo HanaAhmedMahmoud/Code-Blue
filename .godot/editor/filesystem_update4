@@ -1,12 +1,2 @@
-res://Scenes/MainMenu.tscn
-res://Scenes/PlayerScene.tscn
-res://Scenes/ZombieScene.tscn
-res://Scenes/GameScene.tscn
-res://Scenes/UI.tscn
-res://Scenes/Environment/HospMain.tscn
 res://Scenes/Credits.tscn
-res://Scripts/MainMenu.gd
-res://Scenes/credits.gd
-res://Scenes/controls.tscn
-res://Scenes/controls.gd
-res://README.md
+res://Scenes/AudioManager.tscn
