@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvn0lph7tvrno"]
+[gd_scene load_steps=6 format=3 uid="uid://bvn0lph7tvrno"]
 
 [ext_resource type="AudioStream" uid="uid://y8c34d2phrq5" path="res://Sound/combat_theme.mp3" id="1_5am8t"]
 [ext_resource type="Script" path="res://Scripts/Autoloads/AudioManager.gd" id="1_5y08d"]
 [ext_resource type="AudioStream" uid="uid://d0cr1mbf7ieo3" path="res://Sound/main_theme.mp3" id="2_gawqe"]
+[ext_resource type="AudioStream" uid="uid://47ketw1uy1oy" path="res://Sound/walking.mp3" id="4_mse1c"]
+[ext_resource type="AudioStream" uid="uid://6f6gtj8a4mrc" path="res://Sound/knife.mp3" id="5_m40hs"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_5y08d")
@@ -12,3 +14,11 @@ stream = ExtResource("2_gawqe")
 
 [node name="CombatTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_5am8t")
+
+[node name="Walking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mse1c")
+volume_db = 10.0
+
+[node name="SharpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m40hs")
+volume_db = 2.0

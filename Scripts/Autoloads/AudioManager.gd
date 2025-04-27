@@ -3,7 +3,21 @@ extends Node
 func play_sound(node_name):
 	# If sound node exists and sound is enabled.
 	if has_node(node_name) and Settings.play_sound_effects:
+		
+		# These sounds need to only play if not currently playing.
+		var repeatable = ["Walking"]
+		
+		if node_name in repeatable:
+			if not get_node(node_name).is_playing():
+				get_node(node_name).play()
+		else:
 			get_node(node_name).play()
+
+
+func stop_sound(node_name):
+	# If sound node exists and sound is enabled.
+	if has_node(node_name) and Settings.play_sound_effects:
+		get_node(node_name).stop()
 
 
 func _ready() -> void:

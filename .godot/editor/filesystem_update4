@@ -1,2 +1,4 @@
-res://Scenes/Credits.tscn
+res://Scenes/Projectile.tscn
+res://Scripts/Credits.gd
 res://Scenes/AudioManager.tscn
+res://Scenes/PlayerScene.tscn
