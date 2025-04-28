@@ -67,4 +67,9 @@ Angelique
 Hana 
 - Added sound effects and game music 
 - Added collisions, called Angelique for help 
-- Added basic credits and control screen 
+- Added basic credits and control screen
+
+Angelique
+- Attempt to style the Main Menu using theme.
+- Organise file structure.
+- Rework the audio, created an Audio Manager.
