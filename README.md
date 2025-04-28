@@ -73,3 +73,6 @@ Angelique
 - Attempt to style the Main Menu using theme.
 - Organise file structure.
 - Rework the audio, created an Audio Manager.
+
+### 28/04/2025
+- Procrastinate. Make fancy main menu instead.
