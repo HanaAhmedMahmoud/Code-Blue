@@ -1,37 +1,122 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2mc0bdwqyee0"]
+[gd_scene load_steps=11 format=3 uid="uid://c2mc0bdwqyee0"]
 
 [ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_6ur00"]
+[ext_resource type="Theme" uid="uid://x3meyun4bi1w" path="res://Other/MainTheme.tres" id="2_b3gll"]
+[ext_resource type="Texture2D" uid="uid://bo8anh613dxjs" path="res://Art/Environment/receptionareafloor.png" id="2_gfyjx"]
+[ext_resource type="Texture2D" uid="uid://7foikommw0xe" path="res://Art/Environment/receptionareawalls.png" id="3_q1egv"]
+[ext_resource type="Texture2D" uid="uid://diex3krklckp7" path="res://Art/Environment/receptionareachairs.png" id="4_3iqsv"]
+[ext_resource type="Script" path="res://Scripts/CamFollow.gd" id="5_tx6tl"]
+
+[sub_resource type="Animation" id="Animation_r73x7"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xi6vn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_21ptr"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyth7"]
+_data = {
+"RESET": SubResource("Animation_xi6vn"),
+"fade_in": SubResource("Animation_r73x7"),
+"fade_out": SubResource("Animation_21ptr")
+}
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_6ur00")
 
-[node name="CreditsContainer" type="CenterContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Background" type="Node2D" parent="."]
 
-[node name="CanvasGroup" type="CanvasGroup" parent="CreditsContainer"]
-position = Vector2(-1000, 0)
+[node name="Floors" type="Node2D" parent="Background"]
 
-[node name="Button" type="Button" parent="CreditsContainer/CanvasGroup"]
-offset_left = 1024.0
-offset_top = 21.0
-offset_right = 1122.0
-offset_bottom = 76.0
-text = "BACK"
+[node name="FloorsSprite" type="Sprite2D" parent="Background/Floors"]
+texture = ExtResource("2_gfyjx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer"]
+[node name="Walls" type="Node2D" parent="Background"]
+
+[node name="WallsSprite" type="Sprite2D" parent="Background/Walls"]
+texture = ExtResource("3_q1egv")
+
+[node name="Objects" type="Node2D" parent="Background"]
+
+[node name="ChairsSprite" type="Sprite2D" parent="Background/Objects"]
+texture = ExtResource("4_3iqsv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-9, 177)
+limit_left = -768
+limit_top = -740
+limit_right = 768
+limit_bottom = 740
+script = ExtResource("5_tx6tl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.690196)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 292.0
+offset_top = 67.0
+offset_right = 867.0
+offset_bottom = 581.0
+theme = ExtResource("2_b3gll")
+
+[node name="Title" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Title" type="Label" parent="CreditsContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 64
 text = "Our Team"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Names" type="Label" parent="CreditsContainer/VBoxContainer"]
+[node name="Names" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "Angelique Hulot
 Ciara 
 Hana Ahmed-Mahmoud
@@ -41,4 +126,39 @@ Ahad
 "
 horizontal_alignment = 1
 
-[connection signal="pressed" from="CreditsContainer/CanvasGroup/Button" to="." method="_on_button_pressed"]
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 401.0
+offset_top = 546.0
+offset_right = 763.0
+offset_bottom = 591.0
+theme = ExtResource("2_b3gll")
+theme_override_font_sizes/font_size = 32
+text = "BACK"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0449811, 0.0902673, 0.124736, 1)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer3"]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oyth7")
+}
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

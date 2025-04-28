@@ -1,8 +1,10 @@
+ColorRect
 CanvasLayer
+AnimationPlayer
 Node2D
 Camera2D
+HSplitContainer
 RichTextLabel
-ColorRect
 AudioStreamPlayer
 Node
 MarginContainer
@@ -10,5 +12,3 @@ HBoxContainer
 VBoxContainer
 CanvasGroup
 Button
-Label
-CollisionShape2D

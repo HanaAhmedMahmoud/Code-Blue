@@ -75,4 +75,8 @@ Angelique
 - Rework the audio, created an Audio Manager.
 
 ### 28/04/2025
-- Procrastinate. Make fancy main menu instead.
+
+Angelique
+- Procrastinate actual work.
+- Make fancy main menu instead.
+- Also fancified the credits scene.
