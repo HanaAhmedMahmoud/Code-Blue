@@ -6,7 +6,7 @@ extends Node2D
 @export var apocolpseComplete = false 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	$AnimationPlayer.play("fade_in")
 	
 func _process(delta: float) -> void:
 	pass

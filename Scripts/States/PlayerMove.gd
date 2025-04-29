@@ -9,7 +9,6 @@ var anim_player
 var player_direction
 
 func enter():
-	print("Player State -> Move")
 	player = get_tree().get_first_node_in_group("Player")
 	anim_player = player.get_node("AnimationPlayer")
 

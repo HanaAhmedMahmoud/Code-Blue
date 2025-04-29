@@ -5,7 +5,6 @@ var player
 var anim_player
 
 func enter():
-	print("Player State -> Idle")
 	player = get_tree().get_first_node_in_group("Player")
 	anim_player = player.get_node("AnimationPlayer")
 

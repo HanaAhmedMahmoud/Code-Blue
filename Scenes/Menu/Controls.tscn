@@ -1,66 +1,159 @@
-[gd_scene load_steps=2 format=3 uid="uid://cywehq5qr64bc"]
+[gd_scene load_steps=11 format=3 uid="uid://cywehq5qr64bc"]
 
 [ext_resource type="Script" path="res://Scripts/Controls.gd" id="1_h80nu"]
+[ext_resource type="Texture2D" uid="uid://bo8anh613dxjs" path="res://Art/Environment/receptionareafloor.png" id="2_bikxu"]
+[ext_resource type="Texture2D" uid="uid://7foikommw0xe" path="res://Art/Environment/receptionareawalls.png" id="3_c3vik"]
+[ext_resource type="Texture2D" uid="uid://diex3krklckp7" path="res://Art/Environment/receptionareachairs.png" id="4_jfoty"]
+[ext_resource type="Script" path="res://Scripts/CamFollow.gd" id="5_e4l41"]
+[ext_resource type="Theme" uid="uid://x3meyun4bi1w" path="res://Other/MainTheme.tres" id="6_umm20"]
+
+[sub_resource type="Animation" id="Animation_xi6vn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r73x7"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_21ptr"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyth7"]
+_data = {
+"RESET": SubResource("Animation_xi6vn"),
+"fade_in": SubResource("Animation_r73x7"),
+"fade_out": SubResource("Animation_21ptr")
+}
 
 [node name="Controls" type="Node2D"]
 script = ExtResource("1_h80nu")
 
-[node name="MenuContainer" type="CenterContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Background" type="Node2D" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer"]
-layout_mode = 2
+[node name="Floors" type="Node2D" parent="Background"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/HBoxContainer"]
-layout_mode = 2
+[node name="FloorsSprite" type="Sprite2D" parent="Background/Floors"]
+texture = ExtResource("2_bikxu")
 
-[node name="Title" type="Label" parent="MenuContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 80
-text = "Keyboard"
+[node name="Walls" type="Node2D" parent="Background"]
+
+[node name="WallsSprite" type="Sprite2D" parent="Background/Walls"]
+texture = ExtResource("3_c3vik")
+
+[node name="Objects" type="Node2D" parent="Background"]
+
+[node name="ChairsSprite" type="Sprite2D" parent="Background/Objects"]
+texture = ExtResource("4_jfoty")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-9, 177)
+limit_left = -768
+limit_top = -740
+limit_right = 768
+limit_bottom = 740
+script = ExtResource("5_e4l41")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.631373)
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_left = 292.0
+offset_top = 67.0
+offset_right = 867.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 64
+text = "Controls"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 500
+[node name="Inputs" type="Label" parent="CanvasLayer"]
+offset_left = 292.0
+offset_top = 214.0
+offset_right = 867.0
+offset_bottom = 355.0
+theme_override_font_sizes/font_size = 32
+text = "Movement - WASD or Arrow Keys
 
-[node name="WASD" type="Label" parent="MenuContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "W - up 
-A - left
-S - down 
-D - right "
+Attack - Click Left Mouse Button"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MenuContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="MenuContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 80
-text = "Mouse "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="WASD" type="Label" parent="MenuContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Left click - shoot "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CanvasGroup" type="CanvasGroup" parent="MenuContainer"]
-position = Vector2(-1000, 0)
-
-[node name="Button" type="Button" parent="MenuContainer/CanvasGroup"]
-offset_left = 1024.0
-offset_top = 21.0
-offset_right = 1122.0
-offset_bottom = 76.0
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 401.0
+offset_top = 546.0
+offset_right = 763.0
+offset_bottom = 591.0
+theme = ExtResource("6_umm20")
+theme_override_font_sizes/font_size = 32
 text = "BACK"
 
-[connection signal="pressed" from="MenuContainer/CanvasGroup/Button" to="." method="_on_button_pressed"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0449811, 0.0902673, 0.124736, 1)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer3"]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oyth7")
+}
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
