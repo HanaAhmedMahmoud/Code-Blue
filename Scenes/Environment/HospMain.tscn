@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://5ylgidpiopqi"]
+[gd_scene load_steps=20 format=3 uid="uid://5ylgidpiopqi"]
 
 [ext_resource type="Texture2D" uid="uid://bxqnyb3itd0w2" path="res://Art/Environment/hospitalfloors.png" id="1_fxtup"]
 [ext_resource type="Texture2D" uid="uid://jhwbvps4kqst" path="res://Art/Environment/hospitalwalls.png" id="2_5jpuq"]
@@ -46,6 +46,15 @@ size = Vector2(2016, 1082)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf31u"]
 size = Vector2(1268, 1612)
 
+[sub_resource type="Gradient" id="Gradient_kqvnn"]
+offsets = PackedFloat32Array(0, 0.616883)
+colors = PackedColorArray(0.936524, 0.922816, 0.721826, 0.643137, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b3nsj"]
+gradient = SubResource("Gradient_kqvnn")
+fill = 1
+fill_from = Vector2(0.495413, 0.518349)
+
 [node name="HospitalMain" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -54,7 +63,7 @@ layer = -1
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0192937, 0.0469578, 0.0711889, 1)
 
 [node name="Floors" type="Node2D" parent="."]
 
@@ -124,7 +133,7 @@ position = Vector2(-1560, -2502.25)
 shape = SubResource("RectangleShape2D_wh7uv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/WallStaticBody"]
-polygon = PackedVector2Array(-1562, 1940, -583, 1938, -584, 2592, -202, 2596, -204, 1956, -156, 1950, -160, 2596, 223, 2604, 214, 1965, 281, 1965, 279, 2596, 653, 2602, 649, 1960, 708, 1960, 702, 2592, 1082, 2598, 1080, 1956, 1134, 1956, 1130, 2600, 1502, 2600, 1497, 2659, -640, 2666, -647, 2011, -1592, 2009)
+polygon = PackedVector2Array(-1562, 1940, -583, 1938, -584, 2592, -202, 2596, -206, 1949, -156, 1950, -160, 2596, 223, 2604, 214, 1965, 281, 1965, 279, 2596, 653, 2602, 649, 1960, 708, 1960, 702, 2592, 1082, 2598, 1080, 1956, 1134, 1956, 1130, 2600, 1502, 2600, 1497, 2659, -640, 2666, -647, 2011, -1592, 2009)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls/WallStaticBody"]
 polygon = PackedVector2Array(-3309, -60, -3311, 452, -2875, 452, -2875, 385, -3254, 385, -3248, -71)
@@ -138,80 +147,9 @@ position = Vector2(2698, -1308.5)
 shape = SubResource("RectangleShape2D_47mw1")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/WallStaticBody"]
+position = Vector2(0, -71.0131)
+scale = Vector2(1, 0.894263)
 polygon = PackedVector2Array(-631, -382, -633, 501, -568, 501, -581, -392, -221, -390, -210, 493, -148, 497, -146, -388, 204, -386, 214, 488, 275, 490, 283, -394, 639, -394, 645, 486, 712, 486, 712, -386, 1080, -390, 1078, 501, 1140, 501, 1134, -401, -639, -400)
-
-[node name="HospEntranceCollider" type="StaticBody2D" parent="."]
-position = Vector2(1559, 1643)
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HospEntranceCollider"]
-visibility_layer = 2
-position = Vector2(304, 478)
-shape = SubResource("RectangleShape2D_riiue")
-
-[node name="BtmOpCollider" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BtmOpCollider"]
-position = Vector2(-2217.5, 1660)
-shape = SubResource("RectangleShape2D_4mhf4")
-
-[node name="TopOpCollider" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopOpCollider"]
-position = Vector2(-2223, 818.5)
-shape = SubResource("RectangleShape2D_v32hp")
-
-[node name="BtmMRICollision" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BtmMRICollision"]
-position = Vector2(-2832, -994.75)
-shape = SubResource("RectangleShape2D_1ngrb")
-
-[node name="TopMRICollision" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopMRICollision"]
-position = Vector2(-2829.25, -2165.75)
-shape = SubResource("RectangleShape2D_ijgg3")
-
-[node name="StorageCollision" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StorageCollision"]
-position = Vector2(-1563, -1150)
-shape = SubResource("RectangleShape2D_vlv73")
-
-[node name="BreakCollision" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BreakCollision"]
-polygon = PackedVector2Array(-749, -2652, -749, -1052, -755, -988, 9, -996, 9, -1335, 717, -1338, 725, -2660, -757, -2673)
-
-[node name="LabCollision" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LabCollision"]
-position = Vector2(1725, -2131)
-shape = SubResource("RectangleShape2D_our6b")
-
-[node name="BreakCollision2" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakCollision2"]
-position = Vector2(2101, -227)
-shape = SubResource("RectangleShape2D_nf31u")
 
 [node name="RoomCover" type="CanvasLayer" parent="."]
 layer = 0
@@ -222,60 +160,188 @@ offset_left = 1559.0
 offset_top = 1643.0
 offset_right = 2164.0
 offset_bottom = 2605.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="BtmOperRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -2807.0
 offset_top = 1267.0
 offset_right = -1659.0
 offset_bottom = 2026.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="TopOperRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -2809.0
 offset_top = 445.0
 offset_right = -1661.0
 offset_bottom = 1204.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="BtmMRI" type="ColorRect" parent="RoomCover"]
 offset_left = -3245.0
 offset_top = -1622.0
 offset_right = -2439.0
 offset_bottom = -947.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="TopMRI" type="ColorRect" parent="RoomCover"]
 offset_left = -3247.0
 offset_top = -2601.0
 offset_right = -2441.0
 offset_bottom = -1687.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="StorageRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -1920.0
 offset_top = -1913.0
 offset_right = -1212.0
 offset_bottom = -956.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="BreakRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -687.0
 offset_top = -2600.0
 offset_right = 667.0
 offset_bottom = -1636.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="LabRoom" type="ColorRect" parent="RoomCover"]
 offset_left = 732.0
 offset_top = -2601.0
 offset_right = 2663.0
 offset_bottom = -1904.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
 
 [node name="OfficeRoom" type="ColorRect" parent="RoomCover"]
 offset_left = 1558.0
 offset_top = -966.0
 offset_right = 2663.0
 offset_bottom = 267.0
-color = Color(0.129412, 0.211765, 0.27451, 1)
+color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="HospEntranceCollider" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1559, 1643)
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/HospEntranceCollider"]
+visibility_layer = 2
+position = Vector2(304, 478)
+shape = SubResource("RectangleShape2D_riiue")
+
+[node name="BtmOpCollider" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BtmOpCollider"]
+position = Vector2(-2217.5, 1660)
+shape = SubResource("RectangleShape2D_4mhf4")
+
+[node name="TopOpCollider" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/TopOpCollider"]
+position = Vector2(-2223, 818.5)
+shape = SubResource("RectangleShape2D_v32hp")
+
+[node name="BtmMRICollision" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BtmMRICollision"]
+position = Vector2(-2832, -994.75)
+shape = SubResource("RectangleShape2D_1ngrb")
+
+[node name="TopMRICollision" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/TopMRICollision"]
+position = Vector2(-2829.25, -2165.75)
+shape = SubResource("RectangleShape2D_ijgg3")
+
+[node name="StorageCollision" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StorageCollision"]
+position = Vector2(-1563, -1150)
+shape = SubResource("RectangleShape2D_vlv73")
+
+[node name="BreakCollision" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/BreakCollision"]
+polygon = PackedVector2Array(-749, -2652, -749, -1052, -755, -988, 9, -996, 9, -1335, 717, -1338, 725, -2660, -757, -2673)
+
+[node name="LabCollision" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/LabCollision"]
+position = Vector2(1725, -2131)
+shape = SubResource("RectangleShape2D_our6b")
+
+[node name="BreakCollision2" type="StaticBody2D" parent="Collisions"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BreakCollision2"]
+position = Vector2(2101, -227)
+shape = SubResource("RectangleShape2D_nf31u")
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
+color = Color(0.135507, 0.135501, 0.149042, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(459, 1229)
+scale = Vector2(44.0234, 44.0234)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lighting"]
+position = Vector2(1882, 1162)
+scale = Vector2(44.0234, 44.0234)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lighting"]
+position = Vector2(95.0001, 2343)
+scale = Vector2(44.0234, 44.0234)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lighting"]
+position = Vector2(908, 2330)
+scale = Vector2(44.0234, 44.0234)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lighting"]
+position = Vector2(-188, 238)
+scale = Vector2(44.0234, 44.0234)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lighting"]
+position = Vector2(1051, 238)
+scale = Vector2(44.0234, 44.0234)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lighting"]
+position = Vector2(-2159, -996)
+scale = Vector2(44.0234, 44.0234)
+color = Color(1, 1, 1, 0.572549)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lighting"]
+position = Vector2(-825, -758)
+scale = Vector2(44.0234, 44.0234)
+color = Color(1, 1, 1, 0.572549)
+texture = SubResource("GradientTexture2D_b3nsj")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Lighting"]
+position = Vector2(1088, -996)
+scale = Vector2(44.0234, 44.0234)
+color = Color(1, 1, 1, 0.572549)
+texture = SubResource("GradientTexture2D_b3nsj")

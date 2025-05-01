@@ -66,7 +66,7 @@ script = ExtResource("1_gqdhi")
 [node name="Environment" parent="." instance=ExtResource("1_6xis0")]
 
 [node name="Player" parent="." instance=ExtResource("1_c7wp6")]
-position = Vector2(479, 963)
+position = Vector2(-73, 1134)
 
 [node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_pk4y2")

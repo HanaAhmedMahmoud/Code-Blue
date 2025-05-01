@@ -1,7 +1,11 @@
+PointLight2D
+DirectionalLight2D
+LightOccluder2D
+Node2D
+CanvasModulate
+CanvasLayer
 AnimationPlayer
 ColorRect
-CanvasLayer
-Node2D
 Camera2D
 HSplitContainer
 RichTextLabel
@@ -9,6 +13,3 @@ AudioStreamPlayer
 Node
 MarginContainer
 HBoxContainer
-VBoxContainer
-CanvasGroup
-Button
