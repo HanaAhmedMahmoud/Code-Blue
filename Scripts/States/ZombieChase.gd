@@ -4,12 +4,15 @@ class_name ZombieChase
 var zombie
 var player
 var speed
+var nav_agent
+
 
 
 func enter():
 	print("Zombie State -> Chase")
 	
 	zombie = get_parent().get_parent()
+	
 	player = get_tree().get_first_node_in_group("Player")
 	
 	speed = randi_range(200, 300)

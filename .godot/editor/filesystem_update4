@@ -1,8 +1,0 @@
-res://Scenes/AudioManager.tscn
-res://Other/MainTheme.tres
-res://Scripts/Autoloads/Settings.gd
-res://Scenes/Menu/MainMenu.tscn
-res://Scenes/Menu/Controls.tscn
-res://Scenes/Characters/PlayerScene.tscn
-res://Scenes/GameScene.tscn
-res://Scenes/Environment/HospMain.tscn

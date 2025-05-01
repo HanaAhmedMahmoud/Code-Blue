@@ -1,3 +1,4 @@
+NavigationAgent2D
 PointLight2D
 DirectionalLight2D
 LightOccluder2D
@@ -12,4 +13,3 @@ RichTextLabel
 AudioStreamPlayer
 Node
 MarginContainer
-HBoxContainer

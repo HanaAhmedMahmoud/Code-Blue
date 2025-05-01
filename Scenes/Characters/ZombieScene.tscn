@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/States/ZombieDeath.gd" id="4_d8bkr"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieChase.gd" id="4_gp210"]
 [ext_resource type="Script" path="res://Scripts/States/ZombiePatrol.gd" id="5_m6wvp"]
-[ext_resource type="PackedScene" uid="uid://0t6hqkb73ll6" path="res://Scenes/HealthComponent.tscn" id="6_jfbba"]
+[ext_resource type="PackedScene" uid="uid://0t6hqkb73ll6" path="res://Scenes/Components/HealthComponent.tscn" id="6_jfbba"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieTakeDMG.gd" id="7_g2huj"]
-[ext_resource type="PackedScene" uid="uid://birrs1vqowtd" path="res://Scenes/HurtboxComponent.tscn" id="7_k1wny"]
+[ext_resource type="PackedScene" uid="uid://birrs1vqowtd" path="res://Scenes/Components/HurtboxComponent.tscn" id="7_k1wny"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5iyu"]
 radius = 63.0
