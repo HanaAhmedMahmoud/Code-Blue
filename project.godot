@@ -25,6 +25,7 @@ AudioManager="*res://Scenes/AudioManager.tscn"
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://Art/UI/cursor.png"
 
 [global_group]
 

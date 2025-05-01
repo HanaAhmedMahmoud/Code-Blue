@@ -1,5 +1,5 @@
-res://Scenes/GameScene.tscn
+res://Scenes/Environment/HospMain.tscn
 res://Scenes/AudioManager.tscn
 res://Scenes/Characters/PlayerScene.tscn
 res://Scenes/Characters/ZombieScene.tscn
-res://Scenes/Environment/HospMain.tscn
+res://Scenes/GameScene.tscn
