@@ -80,3 +80,16 @@ Angelique
 - Procrastinate actual work.
 - Make fancy main menu instead.
 - Also fancified the credits scene.
+
+### 29/04/2025
+
+Angelique
+- Animate the controls menu.
+
+### 01/04/2025
+
+Angelique
+- Test exporting to itch.io.
+- Darken the environment.
+- Set up lighting.
+- Experiment with mouse cursor.
