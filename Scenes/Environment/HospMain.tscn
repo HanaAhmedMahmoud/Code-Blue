@@ -63,7 +63,7 @@ layer = -1
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.0192937, 0.0469578, 0.0711889, 1)
+color = Color(0.00392157, 0.0196078, 0.027451, 1)
 
 [node name="Floors" type="Node2D" parent="."]
 
@@ -151,72 +151,70 @@ position = Vector2(0, -71.0131)
 scale = Vector2(1, 0.894263)
 polygon = PackedVector2Array(-631, -382, -633, 501, -568, 501, -581, -392, -221, -390, -210, 493, -148, 497, -146, -388, 204, -386, 214, 488, 275, 490, 283, -394, 639, -394, 645, 486, 712, 486, 712, -386, 1080, -390, 1078, 501, 1140, 501, 1134, -401, -639, -400)
 
-[node name="RoomCover" type="CanvasLayer" parent="."]
-layer = 0
-follow_viewport_enabled = true
+[node name="RoomCover" type="Node2D" parent="."]
 
 [node name="HospEntrance" type="ColorRect" parent="RoomCover"]
 offset_left = 1559.0
 offset_top = 1643.0
 offset_right = 2164.0
 offset_bottom = 2605.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="BtmOperRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -2807.0
 offset_top = 1267.0
 offset_right = -1659.0
 offset_bottom = 2026.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="TopOperRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -2809.0
 offset_top = 445.0
 offset_right = -1661.0
 offset_bottom = 1204.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="BtmMRI" type="ColorRect" parent="RoomCover"]
 offset_left = -3245.0
 offset_top = -1622.0
 offset_right = -2439.0
 offset_bottom = -947.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="TopMRI" type="ColorRect" parent="RoomCover"]
 offset_left = -3247.0
 offset_top = -2601.0
 offset_right = -2441.0
 offset_bottom = -1687.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="StorageRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -1920.0
 offset_top = -1913.0
 offset_right = -1212.0
 offset_bottom = -956.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="BreakRoom" type="ColorRect" parent="RoomCover"]
 offset_left = -687.0
 offset_top = -2600.0
 offset_right = 667.0
 offset_bottom = -1636.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="LabRoom" type="ColorRect" parent="RoomCover"]
 offset_left = 732.0
 offset_top = -2601.0
 offset_right = 2663.0
 offset_bottom = -1904.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="OfficeRoom" type="ColorRect" parent="RoomCover"]
 offset_left = 1558.0
 offset_top = -966.0
 offset_right = 2663.0
 offset_bottom = 267.0
-color = Color(0.0117647, 0.0627451, 0.0862745, 1)
+color = Color(0.129412, 0.211765, 0.27451, 1)
 
 [node name="Collisions" type="Node2D" parent="."]
 
@@ -296,7 +294,7 @@ shape = SubResource("RectangleShape2D_nf31u")
 [node name="Lighting" type="Node2D" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
-color = Color(0.135507, 0.135501, 0.149042, 1)
+color = Color(0.0512286, 0.0512245, 0.0588472, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lighting"]
 position = Vector2(459, 1229)

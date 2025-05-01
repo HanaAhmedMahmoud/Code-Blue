@@ -1,8 +1,8 @@
+Node2D
 NavigationAgent2D
 PointLight2D
 DirectionalLight2D
 LightOccluder2D
-Node2D
 CanvasModulate
 CanvasLayer
 AnimationPlayer
@@ -12,4 +12,3 @@ HSplitContainer
 RichTextLabel
 AudioStreamPlayer
 Node
-MarginContainer
