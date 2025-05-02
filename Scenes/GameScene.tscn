@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://hqghxce2lbd5"]
+[gd_scene load_steps=11 format=3 uid="uid://hqghxce2lbd5"]
 
 [ext_resource type="PackedScene" uid="uid://5ylgidpiopqi" path="res://Scenes/Environment/HospMain.tscn" id="1_6xis0"]
 [ext_resource type="PackedScene" uid="uid://uhy7jnx51fk4" path="res://Scenes/Characters/PlayerScene.tscn" id="1_c7wp6"]
 [ext_resource type="Script" path="res://Scripts/GameScene.gd" id="1_gqdhi"]
 [ext_resource type="AudioStream" uid="uid://d0cr1mbf7ieo3" path="res://Sound/main_theme.mp3" id="3_pk4y2"]
 [ext_resource type="AudioStream" uid="uid://y8c34d2phrq5" path="res://Sound/combat_theme.mp3" id="5_gu4yu"]
+[ext_resource type="PackedScene" uid="uid://bej3jghjd60w2" path="res://Scenes/Characters/ZombieScene.tscn" id="6_h6rgr"]
 
 [sub_resource type="Animation" id="Animation_v11vp"]
 length = 0.001
@@ -90,3 +91,6 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_xtxub")
 }
+
+[node name="Zombie" parent="." instance=ExtResource("6_h6rgr")]
+position = Vector2(1226, 1209)

@@ -4,7 +4,6 @@ class_name ZombieChase
 var zombie
 var player
 var speed
-var nav_agent
 
 
 
@@ -61,3 +60,7 @@ func physics_update(_delta):
 
 func _on_chase_area_2d_body_exited(body: Node2D) -> void:
 	get_parent().on_child_transition(self, "ZombiePatrol")
+
+
+func _on_attack_range_body_entered(body: Node2D) -> void:
+	get_parent().on_child_transition(self, "ZombieAttack")

@@ -21,3 +21,6 @@ func _on_body_entered(body: Node2D) -> void:
 		hurtbox.damage(attack)
 		
 		self.queue_free()
+	
+	elif not body.is_in_group("Player"):
+		self.queue_free()

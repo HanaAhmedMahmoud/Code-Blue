@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bej3jghjd60w2"]
+[gd_scene load_steps=16 format=3 uid="uid://bej3jghjd60w2"]
 
 [ext_resource type="Texture2D" uid="uid://dkqvah1pes3v6" path="res://icon.svg" id="1_psshm"]
 [ext_resource type="Script" path="res://Scripts/Characters/Zombie.gd" id="1_vebhm"]
@@ -9,20 +9,24 @@
 [ext_resource type="PackedScene" uid="uid://0t6hqkb73ll6" path="res://Scenes/Components/HealthComponent.tscn" id="6_jfbba"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieTakeDMG.gd" id="7_g2huj"]
 [ext_resource type="PackedScene" uid="uid://birrs1vqowtd" path="res://Scenes/Components/HurtboxComponent.tscn" id="7_k1wny"]
+[ext_resource type="Script" path="res://Scripts/States/ZombieAttack.gd" id="8_md8lr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5iyu"]
 radius = 63.0
 height = 186.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i15oh"]
+radius = 65.0
+height = 184.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hcau"]
+radius = 143.014
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gkvs"]
 radius = 905.108
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rrx4k"]
 radius = 1345.15
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i15oh"]
-radius = 65.0
-height = 184.0
 
 [node name="Zombie" type="CharacterBody2D" groups=["Zombies"]]
 modulate = Color(0, 0.510407, 0.245851, 1)
@@ -40,19 +44,11 @@ texture = ExtResource("1_psshm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t5iyu")
 
-[node name="SightArea2D" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea2D"]
-shape = SubResource("CircleShape2D_4gkvs")
-
-[node name="ChaseArea2D" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea2D"]
-shape = SubResource("CircleShape2D_rrx4k")
-
 [node name="PatrolTimer" type="Timer" parent="."]
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_vw3xb")
@@ -70,6 +66,9 @@ script = ExtResource("5_m6wvp")
 [node name="ZombieTakeDMG" type="Node" parent="StateMachine"]
 script = ExtResource("7_g2huj")
 
+[node name="ZombieAttack" type="Node" parent="StateMachine"]
+script = ExtResource("8_md8lr")
+
 [node name="HealthComponent" parent="." instance=ExtResource("6_jfbba")]
 health = 3
 max_health = 3
@@ -80,6 +79,28 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CapsuleShape2D_i15oh")
 
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_4hcau")
+
+[node name="SightArea2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea2D"]
+shape = SubResource("CircleShape2D_4gkvs")
+
+[node name="ChaseArea2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea2D"]
+shape = SubResource("CircleShape2D_rrx4k")
+
+[connection signal="timeout" from="PatrolTimer" to="StateMachine/ZombiePatrol" method="_on_patrol_timer_timeout"]
+[connection signal="body_entered" from="AttackRange" to="StateMachine/ZombieChase" method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="StateMachine/ZombieAttack" method="_on_attack_range_body_exited"]
 [connection signal="body_entered" from="SightArea2D" to="StateMachine/ZombiePatrol" method="_on_sight_area_2d_body_entered"]
 [connection signal="body_exited" from="ChaseArea2D" to="StateMachine/ZombieChase" method="_on_chase_area_2d_body_exited"]
-[connection signal="timeout" from="PatrolTimer" to="StateMachine/ZombiePatrol" method="_on_patrol_timer_timeout"]

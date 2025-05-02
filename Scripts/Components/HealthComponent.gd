@@ -16,7 +16,7 @@ func damage(attack: Attack):
 	
 	# If player, update the global variables as well.
 	if get_parent().name == "Player":
-		pass
+		print("Player Health ", health)
 	
 	if health <= 0:  # If health is less than 1, parent node 'dies'.
 		var death_state = ""
