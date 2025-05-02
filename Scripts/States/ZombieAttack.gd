@@ -18,14 +18,17 @@ func exit():
 func update(_delta):
 	var attack_cooldown = zombie.get_node("AttackTimer")
 	
-	if attack_cooldown.is_stopped():
-		var hurtbox = player.get_node("HurtboxComponent")
-		var attack = Attack.new()
-		
-		attack.attack_damage = Globals.zombie_damage
-		hurtbox.damage(attack)
-		
-		attack_cooldown.start()
+	if player.get_node("StateMachine").current_state.name != "PlayerDeath":
+		if attack_cooldown.is_stopped():
+			var hurtbox = player.get_node("HurtboxComponent")
+			var attack = Attack.new()
+			
+			attack.attack_damage = Globals.zombie_damage
+			hurtbox.damage(attack)
+			
+			attack_cooldown.start()
+	else:
+		get_parent().on_child_transition(self, "ZombiePatrol")
 
 func physics_update(_delta):
 	pass
