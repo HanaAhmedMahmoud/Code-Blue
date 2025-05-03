@@ -116,13 +116,11 @@ offset_top = 173.0
 offset_right = 867.0
 offset_bottom = 458.0
 theme_override_font_sizes/font_size = 32
-text = "Angelique Hulot
-Ciara 
-Hana Ahmed-Mahmoud
-Amy Chen
-Oliver Huang
-Ahad
-"
+text = "Angelique, Hana - (Programmers)
+
+Oliver (Musician), Ciara (Artist)
+
+Amy, Ahad"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer"]
@@ -147,6 +145,7 @@ color = Color(0.0449811, 0.0902673, 0.124736, 1)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer3"]
 offset_right = 1152.0
