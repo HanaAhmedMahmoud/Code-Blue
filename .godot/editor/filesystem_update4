@@ -8,3 +8,5 @@ res://Scenes/GameScene.tscn
 res://Scenes/Projectile.tscn
 res://Scripts/States/ZombiePatrol.gd
 res://Scripts/Autoloads/Globals.gd
+res://Scripts/GameScene.gd
+res://Scripts/Characters/Zombie.gd
