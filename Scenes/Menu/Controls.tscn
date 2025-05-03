@@ -118,7 +118,9 @@ offset_bottom = 355.0
 theme_override_font_sizes/font_size = 32
 text = "Movement - WASD or Arrow Keys
 
-Attack - Click Left Mouse Button"
+Attack - Click Left Mouse Button
+
+Pause - P or Esc Key"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer"]

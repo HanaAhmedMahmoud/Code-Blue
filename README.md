@@ -109,3 +109,4 @@ Angelique
 - Randomly spawn zombies.
 - Animate zombie movement.
 - Add weapon sprite.
+- Working pause menu.

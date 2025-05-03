@@ -29,4 +29,5 @@ func _process(delta: float) -> void:
 
 
 func _on_zomb_spawner_timeout() -> void:
-	spawn_zombie()
+	if not Settings.paused:
+		spawn_zombie()

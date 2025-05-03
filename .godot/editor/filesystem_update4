@@ -10,3 +10,12 @@ res://Scripts/States/PlayerMove.gd
 res://Scripts/Projectile.gd
 res://README.md
 res://Scripts/Autoloads/Globals.gd
+res://Scripts/Autoloads/Settings.gd
+res://Scripts/GameScene.gd
+res://Scenes/UI.tscn
+res://Scripts/UI.gd
+res://Scenes/Menu/Controls.tscn
+res://Other/MainTheme.tres
+res://Scenes/Menu/MainMenu.tscn
+res://Scenes/Menu/Credits.tscn
+res://Scripts/MainMenu.gd

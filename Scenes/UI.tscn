@@ -1,3 +1,98 @@
-[gd_scene format=3 uid="uid://bm07j53s14d1y"]
+[gd_scene load_steps=3 format=3 uid="uid://bm07j53s14d1y"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_7vimw"]
+[ext_resource type="Theme" uid="uid://x3meyun4bi1w" path="res://Other/MainTheme.tres" id="2_bd7fe"]
 
 [node name="Ui" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_7vimw")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2)
+
+[node name="PauseMenu" type="ColorRect" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -658.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.301961)
+
+[node name="Heading" type="Label" parent="Menu/PauseMenu"]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 492.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 48
+text = "GAME PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Menu/PauseMenu"]
+offset_left = 3.0
+offset_top = 91.0
+offset_right = 492.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 32
+text = "P / Esc to Unpause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="Menu/PauseMenu"]
+offset_left = 109.0
+offset_top = 209.0
+offset_right = 387.0
+offset_bottom = 254.0
+theme = ExtResource("2_bd7fe")
+theme_override_font_sizes/font_size = 32
+text = "MAIN MENU"
+
+[node name="Controls" type="Control" parent="Menu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 326.0
+offset_right = -658.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Heading" type="Label" parent="Menu/Controls"]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 492.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 48
+text = "CONTROLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Menu/Controls"]
+offset_left = 3.0
+offset_top = 104.0
+offset_right = 492.0
+offset_bottom = 286.0
+theme_override_font_sizes/font_size = 24
+text = "Movement - WASD or Arrow Keys
+
+Attack - Click Left Mouse Button
+
+Pause - P or Esc Key"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu/PauseMenu/ReturnButton" to="." method="_on_return_button_pressed"]
