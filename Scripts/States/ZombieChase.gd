@@ -5,13 +5,20 @@ var zombie
 var player
 var speed
 var nav_agent
+var anim_player
 
+
+
+func play_anim(anim_name):
+	if anim_player.current_animation != anim_name:
+		anim_player.play(anim_name)
 
 
 func enter():
 	print("Zombie State -> Chase")
 	
 	zombie = get_parent().get_parent()
+	anim_player = zombie.get_node("AnimationPlayer")
 	
 	player = get_tree().get_first_node_in_group("Player")
 	
@@ -19,14 +26,12 @@ func enter():
 	
 	speed = randi_range(600, 1000)
 	
-	zombie.modulate = Color("c42600")
-	
 
 func exit():
 	pass
 
 
-func update(_delta):
+func update(delta):
 	pass
 
 
@@ -40,6 +45,11 @@ func physics_update(delta):
 	zombie.velocity = zombie.velocity.lerp(direction * speed, delta)
 	
 	zombie.move_and_slide()
+	
+	if direction.x > 0:
+		play_anim("move_right")
+	elif direction.x < 0:
+		play_anim("move_left")
 
 
 func _on_chase_area_2d_body_exited(body: Node2D) -> void:

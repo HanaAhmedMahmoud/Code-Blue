@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bej3jghjd60w2"]
+[gd_scene load_steps=22 format=3 uid="uid://bej3jghjd60w2"]
 
-[ext_resource type="Texture2D" uid="uid://dkqvah1pes3v6" path="res://icon.svg" id="1_psshm"]
 [ext_resource type="Script" path="res://Scripts/Characters/Zombie.gd" id="1_vebhm"]
+[ext_resource type="Texture2D" uid="uid://dqmvlnih4ewx1" path="res://Art/Characters/zombiedoctorsprite.png" id="2_u572k"]
 [ext_resource type="Script" path="res://Scripts/Components/StateMachine.gd" id="2_vw3xb"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieDeath.gd" id="4_d8bkr"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieChase.gd" id="4_gp210"]
@@ -10,6 +10,98 @@
 [ext_resource type="Script" path="res://Scripts/States/ZombieTakeDMG.gd" id="7_g2huj"]
 [ext_resource type="PackedScene" uid="uid://birrs1vqowtd" path="res://Scenes/Components/HurtboxComponent.tscn" id="7_k1wny"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieAttack.gd" id="8_md8lr"]
+
+[sub_resource type="Animation" id="Animation_mb72m"]
+resource_name = "move_up"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(232, 796, 88, 232), Rect2(80, 796, 88, 232), Rect2(380, 796, 88, 232), Rect2(80, 796, 88, 232)]
+}
+
+[sub_resource type="Animation" id="Animation_oobqd"]
+resource_name = "move_down"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(228, 540, 88, 232), Rect2(80, 544, 88, 228), Rect2(372, 540, 88, 232), Rect2(80, 544, 88, 228)]
+}
+
+[sub_resource type="Animation" id="Animation_ce4rs"]
+resource_name = "move_left"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(64, 292, 140, 220), Rect2(220, 288, 140, 224), Rect2(384, 288, 140, 224), Rect2(220, 288, 140, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_l4qov"]
+resource_name = "move_right"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(40, 48, 140, 224), Rect2(204, 48, 140, 224), Rect2(364, 52, 140, 220), Rect2(204, 48, 140, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_ocwdh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(40, 48, 140, 224)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3rsi"]
+_data = {
+"RESET": SubResource("Animation_ocwdh"),
+"move_down": SubResource("Animation_oobqd"),
+"move_left": SubResource("Animation_ce4rs"),
+"move_right": SubResource("Animation_l4qov"),
+"move_up": SubResource("Animation_mb72m")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5iyu"]
 radius = 63.0
@@ -29,18 +121,22 @@ radius = 905.108
 radius = 1345.15
 
 [node name="Zombie" type="CharacterBody2D" groups=["Zombies"]]
-modulate = Color(0, 0.510407, 0.245851, 1)
 collision_layer = 2
 collision_mask = 21
 script = ExtResource("1_vebhm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o3rsi")
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.79117, 0.828675, 0.588621, 1)
 z_index = -1
 position = Vector2(0, -0.500012)
-scale = Vector2(1, 1.44531)
-texture = ExtResource("1_psshm")
+texture = ExtResource("2_u572k")
+region_enabled = true
+region_rect = Rect2(40, 48, 140, 224)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t5iyu")

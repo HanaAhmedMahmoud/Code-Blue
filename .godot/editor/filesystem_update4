@@ -1,12 +1,9 @@
-res://Scenes/Environment/HospMain.tscn
-res://README.md
 res://Scenes/Characters/ZombieScene.tscn
-res://Scenes/AudioManager.tscn
 res://Scripts/States/ZombieChase.gd
+res://Scripts/States/ZombiePatrol.gd
+res://Scenes/AudioManager.tscn
 res://Scenes/Characters/PlayerScene.tscn
 res://Scenes/GameScene.tscn
 res://Scenes/Projectile.tscn
-res://Scripts/States/ZombiePatrol.gd
-res://Scripts/Autoloads/Globals.gd
-res://Scripts/GameScene.gd
-res://Scripts/Characters/Zombie.gd
+res://Scenes/Environment/HospMain.tscn
+res://Scripts/States/PlayerMove.gd
