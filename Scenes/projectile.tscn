@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdn52mcph24s7"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_5s8sp"]
-[ext_resource type="Texture2D" uid="uid://bqjjsgyyx3sj0" path="res://Art/stuffsyes.png" id="2_w8odi"]
+[ext_resource type="Texture2D" uid="uid://7pdpt6xqb8n2" path="res://Art/Items/playersizescalpel.png" id="2_8xyoy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iluym"]
-radius = 49.0
-height = 136.0
+radius = 39.0
+height = 92.0
 
 [sub_resource type="Animation" id="Animation_5tih7"]
 length = 0.001
@@ -51,12 +51,10 @@ collision_mask = 18
 script = ExtResource("1_5s8sp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_w8odi")
-region_enabled = true
+texture = ExtResource("2_8xyoy")
 region_rect = Rect2(1064.64, 845.026, 111.077, 148.103)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 1)
 shape = SubResource("CapsuleShape2D_iluym")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

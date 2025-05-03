@@ -107,3 +107,5 @@ Angelique
 - File organisation.
 - Zombie pathfinding around walls.
 - Randomly spawn zombies.
+- Animate zombie movement.
+- Add weapon sprite.
