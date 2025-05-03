@@ -100,4 +100,3 @@ Angelique
 - Zombies can now damage the Player's Health Component.
 - Zombies leave the Player alone when they die.
 - Stop Player attack projectile passing through walls/enemies.
-

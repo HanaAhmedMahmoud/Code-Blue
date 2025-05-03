@@ -4,6 +4,7 @@ class_name ZombieChase
 var zombie
 var player
 var speed
+var nav_agent
 
 
 
@@ -14,7 +15,9 @@ func enter():
 	
 	player = get_tree().get_first_node_in_group("Player")
 	
-	speed = randi_range(200, 300)
+	nav_agent = zombie.get_node("NavigationAgent2D")
+	
+	speed = randi_range(600, 1000)
 	
 	zombie.modulate = Color("c42600")
 	
@@ -27,33 +30,14 @@ func update(_delta):
 	pass
 
 
-func physics_update(_delta):
-	var target_x = player.position.x
-	var target_y = player.position.y
-	var target = Vector2(target_x, target_y)
+func physics_update(delta):
+	nav_agent.target_position = player.global_position
 	
-	var current_x = zombie.position.x
-	var current_y = zombie.position.y
+	var direction = Vector2.ZERO
+	direction = nav_agent.get_next_path_position() - zombie.global_position
+	direction = direction.normalized()
 	
-	if zombie.position.distance_to(target) > 80:
-		if current_x < target_x:
-			zombie.velocity.x = 1
-		elif current_x > target_x:
-			zombie.velocity.x = -1
-		
-		if current_y < target_y:
-			zombie.velocity.y = 1
-		elif current_y > target_y:
-			zombie.velocity.y = -1
-		
-		zombie.velocity *= speed
-	
-	else:
-		target_x = zombie.position.x
-		target_y = zombie.position.y
-		
-		zombie.velocity.x = 0
-		zombie.velocity.y = 0
+	zombie.velocity = zombie.velocity.lerp(direction * speed, delta)
 	
 	zombie.move_and_slide()
 

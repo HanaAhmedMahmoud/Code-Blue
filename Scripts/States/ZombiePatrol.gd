@@ -4,18 +4,8 @@ class_name ZombiePatrol
 var zombie
 var timer
 
-var speed = 50
-
-var target_x
-var target_y
-
-
-func set_target(current_x, current_y):
-	target_x = current_x + randi_range(-200, 200)
-	target_y = current_y + randi_range(-200, 200)
-	
-	timer.wait_time = randi_range(4, 6)
-	timer.start()
+var speed = randi_range(600, 800)
+var nav_agent
 
 
 func enter():
@@ -24,7 +14,9 @@ func enter():
 	zombie = get_parent().get_parent()
 	timer = zombie.get_node("PatrolTimer")
 	
-	set_target(zombie.position.x, zombie.position.y)
+	nav_agent = zombie.get_node("NavigationAgent2D")
+	
+	timer.start()
 	
 	zombie.modulate = Color("00823f")
 
@@ -34,31 +26,12 @@ func exit():
 func update(_delta):
 	pass
 
-func physics_update(_delta):
-	var current_x = zombie.position.x
-	var current_y = zombie.position.y
+func physics_update(delta):
+	var direction = Vector2.ZERO
+	direction = nav_agent.get_next_path_position() - zombie.global_position
+	direction = direction.normalized()
 	
-	var target = Vector2(target_x, target_y)
-	
-	if zombie.position.distance_to(target) > 10:
-		if current_x < target_x:
-			zombie.velocity.x = 1
-		elif current_x > target_x:
-			zombie.velocity.x = -1
-		
-		if current_y < target_y:
-			zombie.velocity.y = 1
-		elif current_y > target_y:
-			zombie.velocity.y = -1
-		
-		zombie.velocity *= speed
-	
-	else:
-		target_x = zombie.position.x
-		target_y = zombie.position.y
-		
-		zombie.velocity.x = 0
-		zombie.velocity.y = 0
+	zombie.velocity = zombie.velocity.lerp(direction * speed, delta)
 	
 	zombie.move_and_slide()
 
@@ -67,4 +40,7 @@ func _on_sight_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_patrol_timer_timeout() -> void:
-	set_target(zombie.position.x, zombie.position.y)
+	nav_agent.target_position = Globals.patrol_locations.pick_random()
+	timer.wait_time = 15
+	
+	timer.start()
