@@ -1,10 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdn52mcph24s7"]
+[gd_scene load_steps=7 format=3 uid="uid://bdn52mcph24s7"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_5s8sp"]
-[ext_resource type="Texture2D" uid="uid://dkqvah1pes3v6" path="res://icon.svg" id="2_dvdmb"]
+[ext_resource type="Texture2D" uid="uid://bqjjsgyyx3sj0" path="res://Art/stuffsyes.png" id="2_w8odi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q6byj"]
-radius = 18.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iluym"]
+radius = 49.0
+height = 136.0
+
+[sub_resource type="Animation" id="Animation_eulcs"]
+resource_name = "spin"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_5tih7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2j1d"]
+_data = {
+"RESET": SubResource("Animation_5tih7"),
+"spin": SubResource("Animation_eulcs")
+}
 
 [node name="Projectile" type="Area2D"]
 collision_layer = 0
@@ -12,11 +51,19 @@ collision_mask = 18
 script = ExtResource("1_5s8sp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.232654, 0.247497)
-texture = ExtResource("2_dvdmb")
+texture = ExtResource("2_w8odi")
+region_enabled = true
+region_rect = Rect2(1064.64, 845.026, 111.077, 148.103)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_q6byj")
+position = Vector2(-3, 1)
+shape = SubResource("CapsuleShape2D_iluym")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s2j1d")
+}
+autoplay = "spin"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

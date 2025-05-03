@@ -7,7 +7,7 @@ extends Node
 
 @export var patrol_locations = [
 	Vector2(-806, 1159), Vector2(-867, -637), Vector2(-2172, -1108),
-	Vector2(1017, -906)
+	Vector2(1017, -906), Vector2(468, 1828), Vector2(468, 543)
 ]
 
 @export var spawn_locations = [

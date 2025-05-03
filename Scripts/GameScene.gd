@@ -7,18 +7,26 @@ extends Node2D
 
 @export var zomb_scene : PackedScene
 
-func _ready() -> void:
-	$AnimationPlayer.play("fade_in")
-	$ZombSpawner.start()
-	
-func _process(delta: float) -> void:
-	pass
 
-
-func _on_zomb_spawner_timeout() -> void:
+func spawn_zombie():
 	var new_zombie = zomb_scene.instantiate()
 	var spawn_pos = Globals.spawn_locations.pick_random()
 	
 	new_zombie.position = spawn_pos
 	
 	add_child(new_zombie)
+
+
+func _ready() -> void:
+	$AnimationPlayer.play("fade_in")
+	
+	$ZombSpawner.start()
+	
+	spawn_zombie()
+	
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_zomb_spawner_timeout() -> void:
+	spawn_zombie()

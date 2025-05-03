@@ -97,6 +97,6 @@ libraries = {
 wait_time = 20.0
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(2486, -1240)
+position = Vector2(468, 543)
 
 [connection signal="timeout" from="ZombSpawner" to="." method="_on_zomb_spawner_timeout"]
