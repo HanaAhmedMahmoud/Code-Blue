@@ -20,3 +20,4 @@ res://Scripts/States/PatientCrash.gd
 res://Scripts/States/ZombieDeath.gd
 res://Scripts/States/ZombieAttack.gd
 res://Scripts/States/ZombieTakeDMG.gd
+res://README.md

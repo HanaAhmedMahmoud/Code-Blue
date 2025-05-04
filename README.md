@@ -110,3 +110,10 @@ Angelique
 - Animate zombie movement.
 - Add weapon sprite.
 - Working pause menu.
+
+### 04/05/2025
+
+Angelique
+- Edit visibility.
+- Create Patients.
+- Increase spawn rate of Zombies.
