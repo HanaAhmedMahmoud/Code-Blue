@@ -301,7 +301,7 @@ shape = SubResource("RectangleShape2D_nf31u")
 [node name="Lighting" type="Node2D" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
-color = Color(0.0512286, 0.0512245, 0.0588472, 1)
+color = Color(0.106358, 0.106352, 0.117868, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lighting"]
 position = Vector2(459, 1229)

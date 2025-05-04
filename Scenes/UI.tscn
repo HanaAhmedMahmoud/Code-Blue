@@ -31,6 +31,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.301961)
 
 [node name="Heading" type="Label" parent="Menu/PauseMenu"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 492.0
@@ -41,6 +42,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Menu/PauseMenu"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 91.0
 offset_right = 492.0
@@ -51,6 +53,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="Menu/PauseMenu"]
+layout_mode = 0
 offset_left = 109.0
 offset_top = 209.0
 offset_right = 387.0
@@ -72,6 +75,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Heading" type="Label" parent="Menu/Controls"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 492.0
@@ -82,6 +86,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Menu/Controls"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 104.0
 offset_right = 492.0

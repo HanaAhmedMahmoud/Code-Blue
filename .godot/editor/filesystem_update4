@@ -1,2 +1,10 @@
-res://Scenes/Menu/Credits.tscn
+res://Scenes/AudioManager.tscn
 res://Other/MainTheme.tres
+res://Scenes/Characters/PlayerScene.tscn
+res://Scenes/Characters/ZombieScene.tscn
+res://Scenes/GameScene.tscn
+res://Scenes/Environment/HospMain.tscn
+res://Scenes/UI.tscn
+res://Scenes/Menu/Controls.tscn
+res://Scenes/Menu/MainMenu.tscn
+res://Scenes/Menu/Credits.tscn

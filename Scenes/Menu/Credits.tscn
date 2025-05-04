@@ -145,7 +145,6 @@ color = Color(0.0449811, 0.0902673, 0.124736, 1)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer3"]
 offset_right = 1152.0
