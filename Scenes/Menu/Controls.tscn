@@ -112,13 +112,15 @@ vertical_alignment = 1
 
 [node name="Inputs" type="Label" parent="CanvasLayer"]
 offset_left = 292.0
-offset_top = 214.0
+offset_top = 168.0
 offset_right = 867.0
-offset_bottom = 355.0
+offset_bottom = 501.0
 theme_override_font_sizes/font_size = 32
 text = "Movement - WASD or Arrow Keys
 
 Attack - Click Left Mouse Button
+
+Assist Patient - Space Key
 
 Pause - P or Esc Key"
 horizontal_alignment = 1

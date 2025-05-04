@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bm07j53s14d1y"]
 
-[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_7vimw"]
+[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_7vimw"]
 [ext_resource type="Theme" uid="uid://x3meyun4bi1w" path="res://Other/MainTheme.tres" id="2_bd7fe"]
 
 [node name="Ui" type="Control"]

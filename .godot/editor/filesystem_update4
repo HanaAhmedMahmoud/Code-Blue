@@ -1,6 +1,11 @@
-res://Scenes/Components/HealthComponent.tscn
+res://Scripts/GameScene.gd
+res://Scenes/GameScene.tscn
 res://Other/MainTheme.tres
+res://Scenes/Characters/PatientScene.tscn
+res://Scripts/States/PatientCrash.gd
+res://Scenes/Components/HealthComponent.tscn
 res://Scenes/Characters/PlayerScene.tscn
+<<<<<<< Updated upstream
 res://Scenes/Characters/PatientScene.tscn
 res://Scenes/Characters/ZombieScene.tscn
 res://Scenes/Menu/Controls.tscn
@@ -11,3 +16,9 @@ res://Scenes/Menu/GameOver.tscn
 res://Scripts/Autoloads/Globals.gd
 res://Scenes/Menu/GameOver.gd
 res://Scripts/States/PatientCrash.gd
+=======
+res://Scenes/Characters/ZombieScene.tscn
+res://Scenes/UI/UI.tscn
+res://Scenes/UI/player_ui_overlay.tscn
+res://Scenes/Menu/Controls.tscn
+>>>>>>> Stashed changes

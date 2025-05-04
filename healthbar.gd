@@ -10,7 +10,8 @@ var health = 0 : set = setHealth
 func setHealth(newHealth): 
 	var prev_health = health 
 	health = min(max_value, newHealth)
-	value = health 
+	value = health
+	
 	if health <= 0: 
 		queue_free() 
 	if health < prev_health: 
@@ -22,7 +23,8 @@ func setHealth(newHealth):
 func init_health(_health): 
 	health = _health
 	max_value = health
-	value = health 
+	value = health
+	
 	damageBar.max_value = health
 	damageBar.value = health 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgdvew7f2qujq"]
 
-[ext_resource type="PackedScene" uid="uid://b4ao103007ybn" path="res://Scripts/UI/healthbar.tscn" id="1_td67h"]
+[ext_resource type="PackedScene" uid="uid://b4ao103007ybn" path="res://Scenes/UI/healthbar.tscn" id="1_td67h"]
 
 [node name="PlayerUIOverlay" type="Control"]
 layout_mode = 3

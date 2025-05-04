@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/States/ZombieTakeDMG.gd" id="7_g2huj"]
 [ext_resource type="PackedScene" uid="uid://birrs1vqowtd" path="res://Scenes/Components/HurtboxComponent.tscn" id="7_k1wny"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieAttack.gd" id="8_md8lr"]
-[ext_resource type="PackedScene" uid="uid://b4ao103007ybn" path="res://Scripts/UI/healthbar.tscn" id="11_h5e4k"]
+[ext_resource type="PackedScene" uid="uid://b4ao103007ybn" path="res://Scenes/UI/healthbar.tscn" id="11_h5e4k"]
 
 [sub_resource type="Animation" id="Animation_ocwdh"]
 length = 0.001

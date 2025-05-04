@@ -1,10 +1,14 @@
+<<<<<<< Updated upstream
 Button
+=======
+Timer
+ProgressBar
+>>>>>>> Stashed changes
 Label
 ProgressBar
 TextEdit
 Control
 CanvasGroup
-Timer
 RichTextLabel
 PatientCrash
 AnimationPlayer
