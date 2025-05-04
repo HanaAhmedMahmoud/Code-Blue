@@ -46,7 +46,8 @@ func _on_crash_timer_timeout() -> void:
 	patient.get_node("Sprite2D").hide()
 	patient.get_node("AnimationPlayer").stop()
 	
-	patient.get_node("StateIndicator").text = "[center][b][color=black]💀"
+	patient.get_node("StateIndicator").text = "[center][b][color=black]X"
 	
+	Globals.patients_left -= 1
 	patient.dead = true
 	

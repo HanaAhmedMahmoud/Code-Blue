@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 func _ready():
-	var healthbar = get_node("PlayerUIOverlay") 
 	pass
 
 

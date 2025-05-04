@@ -45,12 +45,14 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	for patient in $Patients.get_children():
-		if patient.dead: 
-			next_scene = "res://Scenes/Menu/patients_die.tscn"
-			$AnimationPlayer.play("fade_out")
+	if Globals.patients_left <= 0:
+		Globals.loss_cause = "Your patients died of neglect..."
+		next_scene = "res://Scenes/Menu/GameOver.tscn"
+		$AnimationPlayer.play("fade_out")
+		
 	if Globals.player_health <= 0: 
-		next_scene = "res://Scenes/Menu/player_dies.tscn"
+		Globals.loss_cause = "You were torn apart by zombies..."
+		next_scene = "res://Scenes/Menu/GameOver.tscn"
 		$AnimationPlayer.play("fade_out")
 
 func _on_zomb_spawner_timeout() -> void:
@@ -59,8 +61,8 @@ func _on_zomb_spawner_timeout() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Zombies"):
-		print("Zombie reached patients!")  # Game Over!
-		next_scene = "res://Scenes/Menu/zombie_enters.tscn"
+		Globals.loss_cause = "Zombies reached the patients..."
+		next_scene = "res://Scenes/Menu/GameOver.tscn"
 		$AnimationPlayer.play("fade_out")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

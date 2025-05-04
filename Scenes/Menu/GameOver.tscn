@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6pxnfuixbpv8"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/GameOver.gd" id="1_fd7sg"]
+[ext_resource type="Theme" uid="uid://x3meyun4bi1w" path="res://Other/MainTheme.tres" id="2_sahum"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fd7sg")
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="GameOver"]
+offset_left = 350.0
+offset_top = 423.0
+offset_right = 804.0
+offset_bottom = 529.0
+theme = ExtResource("2_sahum")
+theme_override_font_sizes/font_size = 32
+text = "RETURN TO MAIN MENU"
+
+[node name="Heading" type="Label" parent="GameOver"]
+offset_left = 272.0
+offset_top = 114.0
+offset_right = 873.0
+offset_bottom = 251.0
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER!"
+
+[node name="Label" type="Label" parent="GameOver/Heading"]
+layout_mode = 0
+offset_left = -268.0
+offset_top = 128.0
+offset_right = 880.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 40
+text = "You were torn apart by zombies..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="GameOver/Button" to="." method="_on_button_pressed"]
