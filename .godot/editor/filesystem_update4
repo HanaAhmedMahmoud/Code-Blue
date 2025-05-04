@@ -7,6 +7,7 @@ res://Scenes/Components/HealthComponent.tscn
 res://Scenes/Characters/PlayerScene.tscn
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 res://Scenes/Characters/PatientScene.tscn
 res://Scenes/Characters/ZombieScene.tscn
 res://Scenes/Menu/Controls.tscn
@@ -20,11 +21,16 @@ res://Scripts/States/PatientCrash.gd
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 res://Scenes/Characters/ZombieScene.tscn
 res://Scenes/UI/UI.tscn
 res://Scenes/UI/player_ui_overlay.tscn
 res://Scenes/Menu/Controls.tscn
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

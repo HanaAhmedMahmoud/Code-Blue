@@ -76,6 +76,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_score_timer_timeout() -> void:
 	Globals.total_score += 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
