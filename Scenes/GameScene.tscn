@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://hqghxce2lbd5"]
+[gd_scene load_steps=19 format=3 uid="uid://hqghxce2lbd5"]
 
 [ext_resource type="PackedScene" uid="uid://5ylgidpiopqi" path="res://Scenes/Environment/HospMain.tscn" id="1_6xis0"]
 [ext_resource type="PackedScene" uid="uid://uhy7jnx51fk4" path="res://Scenes/Characters/PlayerScene.tscn" id="1_c7wp6"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://f0fxi6ag83x4" path="res://Art/Characters/patient2.png" id="9_uj016"]
 [ext_resource type="Texture2D" uid="uid://5u10jksp7nwg" path="res://Art/Characters/patient3.png" id="10_4cm8a"]
 [ext_resource type="PackedScene" uid="uid://dgdvew7f2qujq" path="res://Scripts/UI/player_ui_overlay.tscn" id="11_mfj52"]
+[ext_resource type="PackedScene" uid="uid://b6pxnfuixbpv8" path="res://Scenes/Menu/patients_die.tscn" id="12_wngk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wqhg"]
 size = Vector2(1184, 655)
@@ -157,7 +158,10 @@ position = Vector2(906, 540)
 [node name="PlayerUIOverlay" parent="." instance=ExtResource("11_mfj52")]
 script = SubResource("GDScript_ddc7a")
 
+[node name="PatientsDie" parent="." instance=ExtResource("12_wngk3")]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="ZombSpawner" to="." method="_on_zomb_spawner_timeout"]
 
 [editable path="Patients/PatientScene2"]

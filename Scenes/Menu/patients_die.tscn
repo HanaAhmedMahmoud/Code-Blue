@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b6pxnfuixbpv8"]
+
+[node name="PatientsDie" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PatientsDies" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="PatientsDies"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.529412)
+
+[node name="Label" type="Label" parent="PatientsDies"]
+offset_left = 272.0
+offset_top = 233.0
+offset_right = 873.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER!"
+
+[node name="Label" type="Label" parent="PatientsDies/Label"]
+offset_left = 89.0
+offset_top = 128.0
+offset_right = 712.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 40
+text = "all your patients died "

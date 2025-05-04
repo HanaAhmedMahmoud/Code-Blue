@@ -121,3 +121,4 @@ Angelique
 Hana 
 - Enemy health bar
 - Player overlay health bar 
+- Added game over screens

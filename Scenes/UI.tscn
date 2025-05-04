@@ -11,6 +11,7 @@ script = ExtResource("1_7vimw")
 
 [node name="Menu" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Menu"]
 anchors_preset = 15

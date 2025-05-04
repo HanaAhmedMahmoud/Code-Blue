@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ch75ljnakenwv"]
+
+[node name="PlayerDies" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerDies" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PlayerDies"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.529412)
+
+[node name="Label" type="Label" parent="PlayerDies"]
+offset_left = 265.0
+offset_top = 235.0
+offset_right = 866.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER!"
+
+[node name="Label" type="Label" parent="PlayerDies/Label"]
+offset_left = 199.0
+offset_top = 141.0
+offset_right = 696.0
+offset_bottom = 278.0
+theme_override_font_sizes/font_size = 40
+text = "you died..."

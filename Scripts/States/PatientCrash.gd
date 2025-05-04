@@ -5,6 +5,7 @@ var player
 var patient
 var assist_difficulty
 var crash_timer
+var next_scene
 
 
 func enter():
@@ -48,3 +49,4 @@ func _on_crash_timer_timeout() -> void:
 	patient.get_node("StateIndicator").text = "[center][b][color=black]💀"
 	
 	patient.dead = true
+	
