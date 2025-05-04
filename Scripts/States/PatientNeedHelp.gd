@@ -26,12 +26,13 @@ func exit():
 	pass
 
 func update(_delta):
-	if Input.is_action_just_released("assist") and patient.player_near:
-		var success = randi_range(0, 100)
-		
-		if success > assist_difficulty:
-			wait_timer.stop()
-			get_parent().on_child_transition(self, "PatientNorm")
+	if not patient.dead and patient.player_near:
+		if Input.is_action_just_released("assist"):
+			var success = randi_range(0, 100)
+			
+			if success > assist_difficulty:
+				wait_timer.stop()
+				get_parent().on_child_transition(self, "PatientNorm")
 
 func physics_update(_delta):
 	pass

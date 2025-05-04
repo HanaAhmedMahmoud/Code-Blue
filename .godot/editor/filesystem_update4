@@ -16,3 +16,4 @@ res://Scripts/States/PatientNorm.gd
 res://Scripts/Components/StateMachine.gd
 res://Scripts/States/PatientNeedHelp.gd
 res://Scripts/Characters/Patient.gd
+res://Scripts/States/PatientCrash.gd

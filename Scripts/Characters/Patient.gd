@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 var player_near = false
+var dead = false
 
 
 func _ready() -> void:

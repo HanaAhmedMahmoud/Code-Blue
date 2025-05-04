@@ -24,3 +24,9 @@ var projectile_sprites = [syringe, scalpel]
 var patient_positons = [
 	Vector2(461, 476), Vector2(907, 476), Vector2(1318, 476)
 ]
+
+var total_score = 0
+
+var patients_left = 3
+
+var loss_cause = ""

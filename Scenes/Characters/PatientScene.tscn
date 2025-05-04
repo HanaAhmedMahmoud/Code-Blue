@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxrpns2oed7j3"]
+[gd_scene load_steps=13 format=3 uid="uid://cxrpns2oed7j3"]
 
 [ext_resource type="Texture2D" uid="uid://bqjjsgyyx3sj0" path="res://Art/stuffsyes.png" id="1_3eynv"]
 [ext_resource type="Script" path="res://Scripts/Characters/Patient.gd" id="1_uxvko"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Components/StateMachine.gd" id="3_rrh34"]
 [ext_resource type="Script" path="res://Scripts/States/PatientNorm.gd" id="4_l7t0d"]
 [ext_resource type="Script" path="res://Scripts/States/PatientNeedHelp.gd" id="5_l0r1i"]
+[ext_resource type="Script" path="res://Scripts/States/PatientCrash.gd" id="7_7emuw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oa2wx"]
 size = Vector2(188, 228)
@@ -116,10 +117,17 @@ script = ExtResource("4_l7t0d")
 [node name="PatientNeedHelp" type="Node" parent="StateMachine"]
 script = ExtResource("5_l0r1i")
 
+[node name="PatientCrash" type="Node" parent="StateMachine"]
+script = ExtResource("7_7emuw")
+
 [node name="HelpTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CrashTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="HelpableArea2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -152,5 +160,6 @@ autoplay = "indicator"
 
 [connection signal="timeout" from="HelpTimer" to="StateMachine/PatientNorm" method="_on_help_timer_timeout"]
 [connection signal="timeout" from="WaitTimer" to="StateMachine/PatientNeedHelp" method="_on_wait_timer_timeout"]
+[connection signal="timeout" from="CrashTimer" to="StateMachine/PatientCrash" method="_on_crash_timer_timeout"]
 [connection signal="body_entered" from="HelpableArea2D" to="." method="_on_helpable_area_2d_body_entered"]
 [connection signal="body_exited" from="HelpableArea2D" to="." method="_on_helpable_area_2d_body_exited"]
