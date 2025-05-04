@@ -122,3 +122,8 @@ Hana
 - Enemy health bar
 - Player overlay health bar 
 - Added game over screens
+
+### 05/05/2025
+Hana 
+- Adding zombie sound effects
+- Adding zombie death effects

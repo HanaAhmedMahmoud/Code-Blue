@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bej3jghjd60w2"]
+[gd_scene load_steps=26 format=3 uid="uid://bej3jghjd60w2"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Zombie.gd" id="1_vebhm"]
 [ext_resource type="Texture2D" uid="uid://dqmvlnih4ewx1" path="res://Art/Characters/zombiedoctorsprite.png" id="2_u572k"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://birrs1vqowtd" path="res://Scenes/Components/HurtboxComponent.tscn" id="7_k1wny"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieAttack.gd" id="8_md8lr"]
 [ext_resource type="PackedScene" uid="uid://b4ao103007ybn" path="res://Scenes/UI/healthbar.tscn" id="11_h5e4k"]
+[ext_resource type="AudioStream" uid="uid://8j0alhwmuoot" path="res://Sound/ZombieNoise.mp3" id="12_opiow"]
+[ext_resource type="AudioStream" uid="uid://nweo1b14g0rk" path="res://Sound/ZombieDeath.mp3" id="13_swibo"]
+[ext_resource type="AudioStream" uid="uid://b0a7qdl61lgpk" path="res://Sound/ZombieBite.mp3" id="14_y8xvb"]
 
 [sub_resource type="Animation" id="Animation_ocwdh"]
 length = 0.001
@@ -212,6 +215,16 @@ shape = SubResource("CircleShape2D_rrx4k")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
+
+[node name="ZombieNoises" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_opiow")
+autoplay = true
+
+[node name="ZombieDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_swibo")
+
+[node name="ZombieBite" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_y8xvb")
 
 [connection signal="timeout" from="PatrolTimer" to="StateMachine/ZombiePatrol" method="_on_patrol_timer_timeout"]
 [connection signal="timeout" from="UpdateTarget" to="StateMachine/ZombieChase" method="_on_update_target_timeout"]
