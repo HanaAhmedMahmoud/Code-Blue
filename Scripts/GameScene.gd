@@ -14,10 +14,11 @@ func spawn_zombie():
 	
 	new_zombie.position = spawn_pos
 	
-	add_child(new_zombie)
+	$Zombies.add_child(new_zombie)
 
 
 func _ready() -> void:
+	$CanvasLayer.show()
 	$AnimationPlayer.play("fade_in")
 	
 	$ZombSpawner.start()
@@ -31,3 +32,8 @@ func _process(delta: float) -> void:
 func _on_zomb_spawner_timeout() -> void:
 	if not Settings.paused:
 		spawn_zombie()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Zombies"):
+		print("Zombie reached patients!")  # Game Over!

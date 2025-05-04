@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://hqghxce2lbd5"]
+[gd_scene load_steps=16 format=3 uid="uid://hqghxce2lbd5"]
 
 [ext_resource type="PackedScene" uid="uid://5ylgidpiopqi" path="res://Scenes/Environment/HospMain.tscn" id="1_6xis0"]
 [ext_resource type="PackedScene" uid="uid://uhy7jnx51fk4" path="res://Scenes/Characters/PlayerScene.tscn" id="1_c7wp6"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bm07j53s14d1y" path="res://Scenes/UI.tscn" id="3_vnd3g"]
 [ext_resource type="AudioStream" uid="uid://y8c34d2phrq5" path="res://Sound/combat_theme.mp3" id="5_gu4yu"]
 [ext_resource type="PackedScene" uid="uid://bej3jghjd60w2" path="res://Scenes/Characters/ZombieScene.tscn" id="6_xfbgd"]
+[ext_resource type="PackedScene" uid="uid://cxrpns2oed7j3" path="res://Scenes/Characters/PatientScene.tscn" id="8_c3b7w"]
+[ext_resource type="Texture2D" uid="uid://f0fxi6ag83x4" path="res://Art/Characters/patient2.png" id="9_uj016"]
+[ext_resource type="Texture2D" uid="uid://5u10jksp7nwg" path="res://Art/Characters/patient3.png" id="10_4cm8a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wqhg"]
+size = Vector2(1184, 655)
 
 [sub_resource type="Animation" id="Animation_v11vp"]
 length = 0.001
@@ -71,8 +77,13 @@ zomb_scene = ExtResource("6_xfbgd")
 
 [node name="Environment" parent="." instance=ExtResource("1_6xis0")]
 
-[node name="Player" parent="." instance=ExtResource("1_c7wp6")]
-position = Vector2(-73, 1134)
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(872, 317.5)
+shape = SubResource("RectangleShape2D_7wqhg")
 
 [node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_pk4y2")
@@ -83,8 +94,35 @@ parameters/looping = false
 stream = ExtResource("5_gu4yu")
 parameters/looping = false
 
+[node name="Patients" type="Node2D" parent="."]
+
+[node name="PatientScene" parent="Patients" instance=ExtResource("8_c3b7w")]
+position = Vector2(463, 262)
+
+[node name="PatientScene2" parent="Patients" instance=ExtResource("8_c3b7w")]
+position = Vector2(904, 262)
+
+[node name="Sprite2D" parent="Patients/PatientScene2" index="1"]
+position = Vector2(0, -9)
+texture = ExtResource("9_uj016")
+
+[node name="PatientScene3" parent="Patients" instance=ExtResource("8_c3b7w")]
+position = Vector2(1325, 262)
+
+[node name="Sprite2D" parent="Patients/PatientScene3" index="1"]
+position = Vector2(-1, 0)
+texture = ExtResource("10_4cm8a")
+
+[node name="Zombies" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_c7wp6")]
+z_index = 0
+position = Vector2(-73, 1134)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 4
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1152.0
@@ -101,6 +139,10 @@ libraries = {
 wait_time = 20.0
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(468, 543)
+position = Vector2(906, 540)
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="ZombSpawner" to="." method="_on_zomb_spawner_timeout"]
+
+[editable path="Patients/PatientScene2"]
+[editable path="Patients/PatientScene3"]

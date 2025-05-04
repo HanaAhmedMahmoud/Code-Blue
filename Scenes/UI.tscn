@@ -3,12 +3,15 @@
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_7vimw"]
 [ext_resource type="Theme" uid="uid://x3meyun4bi1w" path="res://Other/MainTheme.tres" id="2_bd7fe"]
 
-[node name="Ui" type="Node2D"]
+[node name="Ui" type="Control"]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_7vimw")
 
 [node name="Menu" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Menu"]
 anchors_preset = 15

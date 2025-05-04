@@ -1,3 +1,156 @@
-[gd_scene format=3 uid="uid://cxrpns2oed7j3"]
+[gd_scene load_steps=12 format=3 uid="uid://cxrpns2oed7j3"]
 
-[node name="PatientScene" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bqjjsgyyx3sj0" path="res://Art/stuffsyes.png" id="1_3eynv"]
+[ext_resource type="Script" path="res://Scripts/Characters/Patient.gd" id="1_uxvko"]
+[ext_resource type="Texture2D" uid="uid://dvulm81n6411g" path="res://Art/Characters/patient1.png" id="2_2fxx8"]
+[ext_resource type="Script" path="res://Scripts/Components/StateMachine.gd" id="3_rrh34"]
+[ext_resource type="Script" path="res://Scripts/States/PatientNorm.gd" id="4_l7t0d"]
+[ext_resource type="Script" path="res://Scripts/States/PatientNeedHelp.gd" id="5_l0r1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oa2wx"]
+size = Vector2(188, 228)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i1fpi"]
+radius = 164.0
+height = 410.0
+
+[sub_resource type="Animation" id="Animation_fl0v4"]
+resource_name = "indicator"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StateIndicator:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateIndicator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-57, -5), Vector2(-67, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_l15xe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StateIndicator:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateIndicator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-67, -7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ul6io"]
+_data = {
+"RESET": SubResource("Animation_l15xe"),
+"indicator": SubResource("Animation_fl0v4")
+}
+
+[node name="PatientScene" type="CharacterBody2D" groups=["Patients"]]
+collision_layer = 20
+collision_mask = 3
+script = ExtResource("1_uxvko")
+
+[node name="Bed" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed"]
+z_index = -1
+position = Vector2(-4, 38.5)
+scale = Vector2(1, 0.984756)
+texture = ExtResource("1_3eynv")
+region_enabled = true
+region_rect = Rect2(800, 100, 188, 328)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Bed"]
+y_sort_enabled = true
+position = Vector2(-4, 65)
+texture = ExtResource("1_3eynv")
+region_enabled = true
+region_rect = Rect2(600, 200, 156, 176)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_2fxx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -27)
+shape = SubResource("RectangleShape2D_oa2wx")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_rrh34")
+initial_state = NodePath("PatientNorm")
+
+[node name="PatientNorm" type="Node" parent="StateMachine"]
+script = ExtResource("4_l7t0d")
+
+[node name="PatientNeedHelp" type="Node" parent="StateMachine"]
+script = ExtResource("5_l0r1i")
+
+[node name="HelpTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="WaitTimer" type="Timer" parent="."]
+
+[node name="HelpableArea2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HelpableArea2D"]
+position = Vector2(0, 35)
+shape = SubResource("CapsuleShape2D_i1fpi")
+
+[node name="StateIndicator" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -7.0
+offset_right = 43.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "[center][b][color=red]!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ul6io")
+}
+autoplay = "indicator"
+
+[connection signal="timeout" from="HelpTimer" to="StateMachine/PatientNorm" method="_on_help_timer_timeout"]
+[connection signal="timeout" from="WaitTimer" to="StateMachine/PatientNeedHelp" method="_on_wait_timer_timeout"]
+[connection signal="body_entered" from="HelpableArea2D" to="." method="_on_helpable_area_2d_body_entered"]
+[connection signal="body_exited" from="HelpableArea2D" to="." method="_on_helpable_area_2d_body_exited"]

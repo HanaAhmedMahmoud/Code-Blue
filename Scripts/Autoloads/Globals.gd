@@ -6,8 +6,9 @@ extends Node
 @export var zombie_damage = 10
 
 @export var patrol_locations = [
-	Vector2(-806, 1159), Vector2(-867, -637), Vector2(-2172, -1108),
-	Vector2(1017, -906), Vector2(468, 1828), Vector2(468, 543)
+	Vector2(1130, 1788), Vector2(-867, -637), Vector2(-2172, -1108),
+	Vector2(1017, -906), Vector2(468, 1828), Vector2(468, 543),
+	Vector2(906, 540),
 ]
 
 @export var spawn_locations = [
@@ -19,3 +20,7 @@ var scalpel = "res://Art/Items/playersizescalpel.png"
 var syringe = "res://Art/Items/playersizesyringe.png"
 
 var projectile_sprites = [syringe, scalpel]
+
+var patient_positons = [
+	Vector2(461, 476), Vector2(907, 476), Vector2(1318, 476)
+]
