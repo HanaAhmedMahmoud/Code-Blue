@@ -9,6 +9,16 @@ class_name HealthComponent
 Note: States used here are unfinished.
 """
 
+
+func _process(delta: float) -> void:
+	if get_parent().get_groups()[0] == "Player":
+		if Globals.player_health != health:
+			Globals.player_health = health
+
+func heal():
+	health += 1
+
+
 func damage(attack: Attack):
 	# Get the state machine of the parent node.
 	var state_machine = get_parent().get_node("StateMachine")
@@ -16,7 +26,7 @@ func damage(attack: Attack):
 	
 	# If player, update the global variables as well.
 	if get_parent().name == "Player":
-		print("Player Health ", health)
+		Globals.player_health = health
 	
 	if health <= 0:  # If health is less than 1, parent node 'dies'.
 		var death_state = ""

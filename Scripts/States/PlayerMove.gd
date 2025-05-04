@@ -1,7 +1,7 @@
 extends State
 class_name PlayerMove
 
-@export var speed = 800
+@export var speed = 700
 
 var player
 var anim_player

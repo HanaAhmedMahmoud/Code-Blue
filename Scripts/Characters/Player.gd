@@ -6,3 +6,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_heal_timer_timeout() -> void:
+	$HealthComponent.health += 1

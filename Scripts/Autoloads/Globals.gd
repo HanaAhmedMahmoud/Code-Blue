@@ -25,6 +25,8 @@ var patient_positons = [
 	Vector2(461, 476), Vector2(907, 476), Vector2(1318, 476)
 ]
 
+var player_health = 100
+
 var spawn_at_time = 1
 
 var total_score = 0

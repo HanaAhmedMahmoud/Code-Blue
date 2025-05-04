@@ -105,11 +105,23 @@ position = Vector2(904, 262)
 [node name="Sprite2D" parent="Patients/PatientScene2" index="1"]
 texture = ExtResource("9_uj016")
 
+[node name="StateIndicator" parent="Patients/PatientScene2" index="8"]
+offset_left = -67.0
+offset_top = -7.0
+offset_right = 43.0
+offset_bottom = 115.0
+
 [node name="PatientScene3" parent="Patients" instance=ExtResource("8_c3b7w")]
 position = Vector2(1325, 262)
 
 [node name="Sprite2D" parent="Patients/PatientScene3" index="1"]
 texture = ExtResource("10_4cm8a")
+
+[node name="StateIndicator" parent="Patients/PatientScene3" index="8"]
+offset_left = -67.0
+offset_top = -7.0
+offset_right = 43.0
+offset_bottom = 115.0
 
 [node name="Zombies" type="Node2D" parent="."]
 y_sort_enabled = true

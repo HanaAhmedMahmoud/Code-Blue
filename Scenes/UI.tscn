@@ -19,48 +19,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.2)
+color = Color(0, 0, 0, 0.529412)
 
-[node name="PauseMenu" type="ColorRect" parent="Menu"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = -658.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.301961)
+[node name="PauseMenu" type="Control" parent="Menu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Heading" type="Label" parent="Menu/PauseMenu"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 492.0
-offset_bottom = 102.0
+offset_left = 4.0
+offset_top = 18.0
+offset_right = 494.0
+offset_bottom = 119.0
 theme_override_font_sizes/font_size = 48
 text = "GAME PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Menu/PauseMenu"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 91.0
-offset_right = 492.0
-offset_bottom = 200.0
+offset_left = 5.0
+offset_top = 108.0
+offset_right = 494.0
+offset_bottom = 217.0
 theme_override_font_sizes/font_size = 32
 text = "P / Esc to Unpause"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="Menu/PauseMenu"]
-layout_mode = 0
-offset_left = 109.0
-offset_top = 209.0
-offset_right = 387.0
-offset_bottom = 254.0
+offset_left = 111.0
+offset_top = 226.0
+offset_right = 389.0
+offset_bottom = 271.0
 theme = ExtResource("2_bd7fe")
 theme_override_font_sizes/font_size = 32
 text = "MAIN MENU"
@@ -71,9 +62,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 2.0
-offset_top = 326.0
+offset_top = 292.0
 offset_right = -658.0
-offset_bottom = -1.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -91,16 +82,37 @@ vertical_alignment = 1
 [node name="Label" type="Label" parent="Menu/Controls"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 104.0
+offset_top = 70.0
 offset_right = 492.0
-offset_bottom = 286.0
-theme_override_font_sizes/font_size = 24
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 18
 text = "Movement - WASD or Arrow Keys
 
 Attack - Click Left Mouse Button
 
+Assist Patient - Space Key
+
 Pause - P or Esc Key"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu"]
+offset_left = 585.0
+offset_right = 1064.0
+offset_bottom = 649.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]
+-- First Time? --
+
+Infected have breached the hospital.
+
+With you, a qualified nurse, are several other survivors. They are your patients.
+
+Patiens require regular assistance, indicated by a '?' over their bed. Do not ignore them for too long, lest their health crash rapidly (you will see a '[color=red]![/color]').
+
+Keep the zombies away from the patients. Allow them too close, and nobody will survive.
+
+Good luck."
 
 [connection signal="pressed" from="Menu/PauseMenu/ReturnButton" to="." method="_on_return_button_pressed"]
