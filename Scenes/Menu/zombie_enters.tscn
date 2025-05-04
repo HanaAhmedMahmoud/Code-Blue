@@ -29,6 +29,7 @@ theme_override_font_sizes/font_size = 100
 text = "GAME OVER!"
 
 [node name="Label" type="Label" parent="ZombieEnters/Label"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = 134.0
 offset_right = 622.0
