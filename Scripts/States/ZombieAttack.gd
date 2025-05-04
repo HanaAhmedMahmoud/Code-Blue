@@ -7,8 +7,6 @@ var attack
 
 
 func enter():
-	print("Zombie State -> Attack")
-	
 	zombie = get_parent().get_parent()
 	player = get_tree().get_first_node_in_group("Player")
 

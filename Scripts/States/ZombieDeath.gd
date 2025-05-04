@@ -5,8 +5,6 @@ var zombie
 
 
 func enter():
-	print("Zombie State -> Death")
-	
 	zombie = get_parent().get_parent()
 	
 	zombie.queue_free()

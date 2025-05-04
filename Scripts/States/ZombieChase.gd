@@ -15,8 +15,6 @@ func play_anim(anim_name):
 
 
 func enter():
-	print("Zombie State -> Chase")
-	
 	zombie = get_parent().get_parent()
 	anim_player = zombie.get_node("AnimationPlayer")
 	

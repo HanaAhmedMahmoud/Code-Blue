@@ -19,6 +19,7 @@ func enter():
 	
 	assist_difficulty = randi_range(0, 40)
 	
+	patient.get_node("AnimationPlayer").play("indicator")
 	patient.get_node("StateIndicator").text = "[center][b]?"
 
 
@@ -28,6 +29,8 @@ func exit():
 func update(_delta):
 	if not patient.dead and patient.player_near:
 		if Input.is_action_just_released("assist"):
+			patient.get_node("AnimationPlayer").play("assist")
+			
 			var success = randi_range(0, 100)
 			
 			if success > assist_difficulty:

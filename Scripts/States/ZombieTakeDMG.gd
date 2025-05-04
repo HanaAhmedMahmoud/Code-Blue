@@ -3,7 +3,7 @@ class_name ZombieTakeDMG
 
 
 func enter():
-	print("Zombie State -> TakeDMG")
+	pass
 	
 
 func exit():

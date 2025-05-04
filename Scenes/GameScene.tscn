@@ -103,14 +103,12 @@ position = Vector2(463, 262)
 position = Vector2(904, 262)
 
 [node name="Sprite2D" parent="Patients/PatientScene2" index="1"]
-position = Vector2(0, -9)
 texture = ExtResource("9_uj016")
 
 [node name="PatientScene3" parent="Patients" instance=ExtResource("8_c3b7w")]
 position = Vector2(1325, 262)
 
 [node name="Sprite2D" parent="Patients/PatientScene3" index="1"]
-position = Vector2(-1, 0)
 texture = ExtResource("10_4cm8a")
 
 [node name="Zombies" type="Node2D" parent="."]
