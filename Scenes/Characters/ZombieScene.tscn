@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bej3jghjd60w2"]
+[gd_scene load_steps=23 format=3 uid="uid://bej3jghjd60w2"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Zombie.gd" id="1_vebhm"]
 [ext_resource type="Texture2D" uid="uid://dqmvlnih4ewx1" path="res://Art/Characters/zombiedoctorsprite.png" id="2_u572k"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/States/ZombieTakeDMG.gd" id="7_g2huj"]
 [ext_resource type="PackedScene" uid="uid://birrs1vqowtd" path="res://Scenes/Components/HurtboxComponent.tscn" id="7_k1wny"]
 [ext_resource type="Script" path="res://Scripts/States/ZombieAttack.gd" id="8_md8lr"]
+[ext_resource type="PackedScene" uid="uid://b4ao103007ybn" path="res://Scripts/UI/healthbar.tscn" id="11_h5e4k"]
 
 [sub_resource type="Animation" id="Animation_ocwdh"]
 length = 0.001
@@ -176,6 +177,12 @@ script = ExtResource("8_md8lr")
 [node name="HealthComponent" parent="." instance=ExtResource("6_jfbba")]
 health = 3
 max_health = 3
+
+[node name="Healthbar" parent="." instance=ExtResource("11_h5e4k")]
+offset_left = -109.0
+offset_top = -161.0
+offset_right = 108.0
+offset_bottom = -137.0
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_k1wny")]
 health_component = NodePath("../HealthComponent")

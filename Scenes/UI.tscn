@@ -11,7 +11,6 @@ script = ExtResource("1_7vimw")
 
 [node name="Menu" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Menu"]
 anchors_preset = 15
@@ -28,6 +27,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Heading" type="Label" parent="Menu/PauseMenu"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 18.0
 offset_right = 494.0
@@ -38,6 +38,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Menu/PauseMenu"]
+layout_mode = 0
 offset_left = 5.0
 offset_top = 108.0
 offset_right = 494.0
@@ -48,6 +49,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="Menu/PauseMenu"]
+layout_mode = 0
 offset_left = 111.0
 offset_top = 226.0
 offset_right = 389.0

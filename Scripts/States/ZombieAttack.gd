@@ -4,6 +4,7 @@ class_name ZombieAttack
 var zombie
 var player
 var attack
+@onready var healthbar = $"../../Healthbar"
 
 
 func enter():

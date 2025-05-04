@@ -117,3 +117,7 @@ Angelique
 - Edit visibility.
 - Create Patients.
 - Increase spawn rate of Zombies.
+
+Hana 
+- Enemy health bar
+- Player overlay health bar 

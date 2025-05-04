@@ -4,6 +4,8 @@ class_name HealthComponent
 @export var health : int
 @export var max_health : int
 
+#signal for player health 
+signal health_changed(new_health)
 
 """
 Note: States used here are unfinished.
@@ -17,6 +19,7 @@ func _process(delta: float) -> void:
 
 func heal():
 	health += 1
+	emit_signal("health_changed", health)
 
 
 func damage(attack: Attack):
@@ -24,9 +27,16 @@ func damage(attack: Attack):
 	var state_machine = get_parent().get_node("StateMachine")
 	health -= attack.attack_damage
 	
+	# update any health bar
+	if get_parent().has_node("Healthbar"):
+		var healthbar = get_parent().get_node("Healthbar")
+		healthbar.health = health
+	
 	# If player, update the global variables as well.
 	if get_parent().name == "Player":
 		Globals.player_health = health
+		print(Globals.player_health)
+		emit_signal("health_changed", health)
 	
 	if health <= 0:  # If health is less than 1, parent node 'dies'.
 		var death_state = ""

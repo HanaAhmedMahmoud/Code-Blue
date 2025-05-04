@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgdvew7f2qujq"]
+
+[ext_resource type="PackedScene" uid="uid://b4ao103007ybn" path="res://Scripts/UI/healthbar.tscn" id="1_td67h"]
+
+[node name="PlayerUIOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Healthbar" parent="PlayerUI" instance=ExtResource("1_td67h")]
+offset_left = 25.0
+offset_top = 600.0
+offset_right = 337.0
+offset_bottom = 625.0
+
+[node name="Label" type="Label" parent="PlayerUI"]
+offset_left = 27.0
+offset_top = 568.0
+offset_right = 93.0
+offset_bottom = 591.0
+text = "HEALTH:"
