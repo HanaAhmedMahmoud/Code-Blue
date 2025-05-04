@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://::1746355093
 export_presets.cfg::TextFile::-1::1746269560::0::1::::<><>::
 healthbar.gd::GDScript::-1::1746354940::0::1::::<>ProgressBar<>::
@@ -57,6 +58,8 @@ ZombieScene.tscn::PackedScene::2687471932342281331::1746355514::0::1::::<><>::re
 ::res://Scenes/Components/::1746355514
 HealthComponent.tscn::PackedScene::1795839851521998273::1746355514::0::1::::<><>::res://Scripts/Components/HealthComponent.gd
 =======
+=======
+>>>>>>> Stashed changes
 ::res://::1746354092
 export_presets.cfg::TextFile::-1::1746269560::0::1::::<><>::
 healthbar.gd::GDScript::-1::1746353358::0::1::::<>ProgressBar<>::
@@ -112,12 +115,16 @@ PlayerScene.tscn::PackedScene::1419742364149159509::1746353904::0::1::::<><>::ui
 ZombieScene.tscn::PackedScene::2687471932342281331::1746353904::0::1::::<><>::res://Scripts/Characters/Zombie.gd<>uid://dqmvlnih4ewx1::::res://Art/Characters/zombiedoctorsprite.png<>res://Scripts/Components/StateMachine.gd<>res://Scripts/States/ZombieDeath.gd<>res://Scripts/States/ZombieChase.gd<>res://Scripts/States/ZombiePatrol.gd<>uid://0t6hqkb73ll6::::res://Scenes/Components/HealthComponent.tscn<>res://Scripts/States/ZombieTakeDMG.gd<>uid://birrs1vqowtd::::res://Scenes/Components/HurtboxComponent.tscn<>res://Scripts/States/ZombieAttack.gd<>uid://b4ao103007ybn::::res://Scenes/UI/healthbar.tscn
 ::res://Scenes/Components/::1746353904
 HealthComponent.tscn::PackedScene::1795839851521998273::1746353904::0::1::::<><>::res://Scripts/Components/HealthComponent.gd
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 HurtboxComponent.tscn::PackedScene::87767399605242737::1745476556::0::1::::<><>::res://Scripts/Components/HurtboxComponent.gd
 ::res://Scenes/Environment/::1746339811
 HospEntrance.tscn::PackedScene::1920189963185010044::1745645538::0::1::::<><>::uid://bxqnyb3itd0w2::::res://Art/Environment/hospitalfloors.png<>uid://jhwbvps4kqst::::res://Art/Environment/hospitalwalls.png
 HospMain.tscn::PackedScene::2155889402436271220::1746339811::0::1::::<><>::uid://bxqnyb3itd0w2::::res://Art/Environment/hospitalfloors.png<>uid://jhwbvps4kqst::::res://Art/Environment/hospitalwalls.png<>uid://cog34obac0eyh::::res://Art/Environment/nursesstation.png
 Reception.tscn::PackedScene::3648095397303581214::1745914276::0::1::::<><>::uid://bo8anh613dxjs::::res://Art/Environment/receptionareafloor.png<>uid://7foikommw0xe::::res://Art/Environment/receptionareawalls.png<>uid://diex3krklckp7::::res://Art/Environment/receptionareachairs.png
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 ::res://Scenes/Menu/::1746355515
 Controls.tscn::PackedScene::6503046181285365792::1746355514::0::1::::<><>::res://Scripts/Controls.gd<>uid://bo8anh613dxjs::::res://Art/Environment/receptionareafloor.png<>uid://7foikommw0xe::::res://Art/Environment/receptionareawalls.png<>uid://diex3krklckp7::::res://Art/Environment/receptionareachairs.png<>res://Scripts/CamFollow.gd<>uid://x3meyun4bi1w::::res://Other/MainTheme.tres
@@ -134,6 +141,8 @@ Controls.gd::GDScript::-1::1745914873::0::1::::<>Node2D<>::
 Credits.gd::GDScript::-1::1745914933::0::1::::<>Node2D<>::
 GameScene.gd::GDScript::-1::1746355775::0::1::::<>Node2D<>::
 =======
+=======
+>>>>>>> Stashed changes
 ::res://Scenes/Menu/::1746353905
 Controls.tscn::PackedScene::6503046181285365792::1746353905::0::1::::<><>::res://Scripts/Controls.gd<>uid://bo8anh613dxjs::::res://Art/Environment/receptionareafloor.png<>uid://7foikommw0xe::::res://Art/Environment/receptionareawalls.png<>uid://diex3krklckp7::::res://Art/Environment/receptionareachairs.png<>res://Scripts/CamFollow.gd<>uid://x3meyun4bi1w::::res://Other/MainTheme.tres
 Credits.tscn::PackedScene::6692878815674621297::1746328953::0::1::::<><>::res://Scripts/Credits.gd<>uid://x3meyun4bi1w::::res://Other/MainTheme.tres<>uid://bo8anh613dxjs::::res://Art/Environment/receptionareafloor.png<>uid://7foikommw0xe::::res://Art/Environment/receptionareawalls.png<>uid://diex3krklckp7::::res://Art/Environment/receptionareachairs.png<>res://Scripts/CamFollow.gd
@@ -149,13 +158,19 @@ CamFollow.gd::GDScript::-1::1745831319::0::1::::<>Camera2D<>::
 Controls.gd::GDScript::-1::1745914873::0::1::::<>Node2D<>::
 Credits.gd::GDScript::-1::1745914933::0::1::::<>Node2D<>::
 GameScene.gd::GDScript::-1::1746352831::0::1::::<>Node2D<>::
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Inventory.gd::GDScript::-1::1744015042::0::1::::<>Node<>::
 MainMenu.gd::GDScript::-1::1746268605::0::1::::<>Node2D<>::
 Patient.gd::GDScript::-1::1744015042::0::1::::<>Node<>::
 Projectile.gd::GDScript::-1::1746267529::0::1::::<>Area2D<>::
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 UI.gd::GDScript::-1::1746354940::0::1::::<>Control<>::
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 UIManager.gd::GDScript::-1::1744015042::0::1::::<>Node<>::
@@ -164,9 +179,15 @@ AudioManager.gd::GDScript::-1::1745735323::0::1::::<>Node<>::
 Globals.gd::GDScript::-1::1746352831::0::1::::<>Node<>::
 Settings.gd::GDScript::-1::1746340424::0::1::::<>Node<>::
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://Scripts/Characters/::1746355041
 Patient.gd::GDScript::-1::1746338344::0::1::::<>CharacterBody2D<>::
 Player.gd::GDScript::-1::1746355041::0::1::::<>CharacterBody2D<>::
+=======
+::res://Scripts/Characters/::1746352957
+Patient.gd::GDScript::-1::1746338344::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1746352957::0::1::::<>CharacterBody2D<>::
+>>>>>>> Stashed changes
 =======
 ::res://Scripts/Characters/::1746352957
 Patient.gd::GDScript::-1::1746338344::0::1::::<>CharacterBody2D<>::
@@ -180,8 +201,13 @@ HurtboxComponent.gd::GDScript::-1::1746352831::0::1::::HurtboxComponent<>Node<>:
 StateMachine.gd::GDScript::-1::1746336724::0::1::::<>Node<>::
 StateTemplate.gd::GDScript::-1::1745128854::0::1::::State<>Node<>::
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://Scripts/States/::1746354942
 PatientCrash.gd::GDScript::-1::1746354942::0::1::::PatientCrash<>State<>::
+=======
+::res://Scripts/States/::1746352831
+PatientCrash.gd::GDScript::-1::1746339585::0::1::::PatientCrash<>State<>::
+>>>>>>> Stashed changes
 =======
 ::res://Scripts/States/::1746352831
 PatientCrash.gd::GDScript::-1::1746339585::0::1::::PatientCrash<>State<>::
@@ -198,6 +224,7 @@ ZombieDeath.gd::GDScript::-1::1746340142::0::1::::ZombieDeath<>State<>::
 ZombiePatrol.gd::GDScript::-1::1746339796::0::1::::ZombiePatrol<>State<>::
 ZombieTakeDMG.gd::GDScript::-1::1746339802::0::1::::ZombieTakeDMG<>State<>::
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://Scripts/UI/::1746354940
 healthbar.tscn::PackedScene::4422794975245154751::1746354940::0::1::::<><>::res://healthbar.gd
 player_ui_overlay.tscn::PackedScene::7587871651404747106::1746354940::0::1::::<><>::uid://b4ao103007ybn::::res://Scripts/UI/healthbar.tscn
@@ -207,6 +234,8 @@ knife.mp3::AudioStreamMP3::2188069996435908284::1745663005::1746355093::1::::<><
 main_theme.mp3::AudioStreamMP3::8919191149152055080::1743663546::1746355093::1::::<><>::
 walking.mp3::AudioStreamMP3::2102151899874507676::1745663005::1746355093::1::::<><>::
 =======
+=======
+>>>>>>> Stashed changes
 ::res://Scripts/UI/::1746353002
 UI.gd::GDScript::-1::1746332767::0::1::::<>Control<>::
 ::res://Sound/::1746352852
@@ -214,4 +243,7 @@ combat_theme.mp3::AudioStreamMP3::1752829678470284106::1744015389::1746352852::1
 knife.mp3::AudioStreamMP3::2188069996435908284::1745663005::1746352852::1::::<><>::
 main_theme.mp3::AudioStreamMP3::8919191149152055080::1743663546::1746352852::1::::<><>::
 walking.mp3::AudioStreamMP3::2102151899874507676::1745663005::1746352852::1::::<><>::
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
