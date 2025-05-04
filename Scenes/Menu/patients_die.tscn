@@ -28,6 +28,7 @@ theme_override_font_sizes/font_size = 100
 text = "GAME OVER!"
 
 [node name="Label" type="Label" parent="PatientsDies/Label"]
+layout_mode = 0
 offset_left = 89.0
 offset_top = 128.0
 offset_right = 712.0
