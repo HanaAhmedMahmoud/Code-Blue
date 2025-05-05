@@ -12,7 +12,7 @@ func enter():
 	player = get_tree().get_first_node_in_group("Player")
 	patient = get_parent().get_parent()
 	
-	var time_can_wait = randi_range(10, 15)
+	var time_can_wait = randi_range(5, 10)
 	crash_timer = patient.get_node("CrashTimer")
 	
 	crash_timer.wait_time = time_can_wait

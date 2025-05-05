@@ -35,7 +35,6 @@ func damage(attack: Attack):
 	# If player, update the global variables as well.
 	if get_parent().name == "Player":
 		Globals.player_health = health
-		print(Globals.player_health)
 		emit_signal("health_changed", health)
 	
 	if health <= 0:  # If health is less than 1, parent node 'dies'.
@@ -47,7 +46,6 @@ func damage(attack: Attack):
 			"Player":
 				death_state = "PlayerDeath"
 			"Zombies":
-				print("zombie death")
 				$"../ZombieDeath".play()
 				$"..".modulate = Color(1, 0, 0)
 				await get_tree().create_timer(0.5).timeout 

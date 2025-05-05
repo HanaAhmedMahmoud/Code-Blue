@@ -7,6 +7,10 @@ func _ready() -> void:
 	$Menu.hide()
 
 
+func update_score(score):
+	$CanvasLayer/ScoreLabel.text = str(Globals.total_score)
+
+
 func go_to_scene(scene):
 	get_tree().change_scene_to_file(scene)
 

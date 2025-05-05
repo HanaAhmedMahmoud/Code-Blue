@@ -7,6 +7,7 @@ var zombie
 func enter():
 	zombie = get_parent().get_parent()
 	
+	Globals.kill_count += 1
 	zombie.queue_free()
 	
 

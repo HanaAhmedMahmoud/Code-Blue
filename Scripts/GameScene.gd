@@ -68,8 +68,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_out":
 		go_to_scene(next_scene)
-		print("Zombie reached patients!")  # Game Over!
-
 
 func _on_score_timer_timeout() -> void:
 	Globals.total_score += 1
+	$Ui.update_score(Globals.total_score)
+	$ScoreTimer.start()

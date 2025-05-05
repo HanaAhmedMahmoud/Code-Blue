@@ -28,6 +28,8 @@ var patient_positons = [
 
 var player_health = 100
 
+var kill_count = 0
+
 var spawn_at_time = 1
 
 var total_score = 0

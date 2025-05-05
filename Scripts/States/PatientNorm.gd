@@ -9,7 +9,7 @@ func enter():
 	player = get_tree().get_first_node_in_group("Player")
 	patient = get_parent().get_parent()
 	
-	var time_until_help = randi_range(20, 60)
+	var time_until_help = randi_range(10, 40)
 	var help_timer = patient.get_node("HelpTimer")
 	
 	help_timer.wait_time = time_until_help

@@ -1,8 +1,9 @@
+Label
+CanvasLayer
 AudioStreamPlayer2D
 Button
 Timer
 ProgressBar
-Label
 ProgressBar
 TextEdit
 Control
@@ -10,5 +11,4 @@ CanvasGroup
 RichTextLabel
 PatientCrash
 AnimationPlayer
-CanvasLayer
 Node2D
