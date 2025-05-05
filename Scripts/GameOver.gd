@@ -18,5 +18,6 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/MainMenu.tscn")
 	Globals.patients_left = 3
+	Globals.total_score = 0
 	Globals.player_health = 100
 	Globals.spawn_at_time = 1

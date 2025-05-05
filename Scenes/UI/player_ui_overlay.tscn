@@ -21,9 +21,16 @@ offset_right = 337.0
 offset_bottom = 625.0
 max_value = 100.0
 
-[node name="Label" type="Label" parent="PlayerUI"]
+[node name="HealthLabel" type="Label" parent="PlayerUI"]
 offset_left = 27.0
 offset_top = 568.0
 offset_right = 93.0
 offset_bottom = 591.0
 text = "HEALTH:"
+
+[node name="ControlLabel" type="Label" parent="PlayerUI"]
+offset_left = 371.0
+offset_top = 601.0
+offset_right = 563.0
+offset_bottom = 624.0
+text = "P / Esc to Pause/Controls"
