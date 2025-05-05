@@ -15,3 +15,5 @@ res://Scripts/GameOver.gd
 res://Scenes/Menu/GameOver.tscn
 res://Scenes/UI/UI.tscn
 res://Scripts/UI/UI.gd
+res://Scenes/Characters/PlayerScene.tscn
+res://Scripts/States/PlayerDeath.gd

@@ -8,7 +8,6 @@ func go_to_scene(scene):
 	get_tree().change_scene_to_file(scene)
 
 func _onHealthChange(new_health):
-	print("changing health")
 	playerHealthComponent.health_changed.connect(healthbar.setHealth)
  
 #eventually a signal sent to here when the zombies are triggered 

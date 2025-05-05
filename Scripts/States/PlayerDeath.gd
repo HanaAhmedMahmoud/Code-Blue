@@ -2,7 +2,7 @@ extends State
 class_name PlayerDeath
 
 func enter():
-	print("Oh noes we ded.")
+	pass
 
 func exit():
 	pass
