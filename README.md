@@ -1,7 +1,9 @@
 # Code-Blue
-GDG group project - theme "Crash" 
+GDG group project - theme "Crash"
 
-# Team Members - add name here!!
+## https://anqilique.itch.io/code-blue
+
+# Team Members
 Hana Ahmed-Mahmoud 
 
 Angelique Hulot (@anqilique)
@@ -9,6 +11,12 @@ Angelique Hulot (@anqilique)
 Amy Chen .-.
 
 ciara
+
+
+## Preview
+<img width="869" height="487" alt="title" src="https://github.com/user-attachments/assets/bbeb43c3-ecc6-4ca8-b37a-5346784a45fb" />
+<img width="867" height="485" alt="scene" src="https://github.com/user-attachments/assets/1a5786d9-6051-4932-848a-194d7fbc668e" />
+
 
 ## Coding conventions 
 - Camel casing 
